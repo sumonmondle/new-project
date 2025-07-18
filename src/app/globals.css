@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@keyframes pulse-custom {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translate(-50%, -50%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 1.5s infinite ease-in-out;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* global  */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #000000;
+  overflow: hidden;
+  filter: url("#goo");
+}
+
+.hooksMain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ball {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff6d6d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff6d6d;
+  will-change: transform;
+  touch-action: none;
+  user-select: none;
+}
+
+.aspect-ratio-16-9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 9/16 ratio */
+}
+
+.aspect-ratio-16-9 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@layer components {
+  .inner-blue-line {
+    @apply w-[1px] rounded-[20px] bg-[#273fb7] shadow-[0_0_10px_1px_#2c3870];
+    height: 100px;
+    position: sticky;
+    top: 25%;
+    transition: height 0.3s ease;
+  }
+}
