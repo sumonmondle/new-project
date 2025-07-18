@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 
 import ScrollAnimationSection from "@/components/ScrollAnimationSection/ScrollAnimationSection";
+import WeDo from "@/components/WeDo/WeDo";
 import WorkProjectSection from "@/components/WorkProjectSection/WorkProjectSection";
 import YouLeadsTimeline from "@/components/YouLeadsTimeline/YouLeadsTimeline";
 
@@ -31,9 +32,14 @@ function page() {
         <CaseStudies></CaseStudies>{" "}
       </AnimatedSection>
       <DoDifferently></DoDifferently>
-      <YouLeadsTimeline></YouLeadsTimeline>
-      <AnimatedSection id="Process">Section 4: Process</AnimatedSection>
-      <AnimatedSection id="book-a-call">Section 5: Book a Call</AnimatedSection>
+      {/* <YouLeadsTimeline></YouLeadsTimeline> */}
+      <AnimatedSection>
+        <div id="Process">
+          <YouLeadsTimeline />
+        </div>
+      </AnimatedSection>
+      <WeDo></WeDo>
+
     </div>
   );
 }

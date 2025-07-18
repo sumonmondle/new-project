@@ -10,7 +10,7 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="w-full sticky top-4 z-50 flex justify-center px-4">
+    <header className="sticky z-50 flex justify-center w-full px-4 top-4">
       <div
         className="absolute max-w-[944px] w-full flex items-center justify-between px-4 py-3 md:py-4 
                       bg-gradient-to-b from-[#1819294d] to-black/90 
@@ -19,16 +19,16 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="#" aria-label="Home" className="shrink-0">
           <Image
-            src="https://i.postimg.cc/Zn3vTDG0/Chat-GPT-Image-Jul-17-2025-12-48-32-PM-2-removebg-preview.png"
+            src="/image/Logo png.png"
             alt="Brand Logo"
             width={120}
             height={40}
-            className="h-auto w-auto"
+            className="w-auto h-auto"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 items-center justify-center flex-1 text-sm">
+        <nav className="items-center justify-center flex-1 hidden space-x-6 text-sm md:flex">
           <NavLink href="#testimonial" text="Review" />
           <NavLink href="#work" text="Work" />
           <NavLink href="#case-study" text="Case Study" />
@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
 
         {/* Hamburger Button */}
-        <button className="md:hidden ml-auto z-50" onClick={toggleMenu} aria-label="Toggle menu">
+        <button className="z-50 ml-auto md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
           <Image
             src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/6796419e2d5f0387789624c2_Hamburger.svg"
             alt="Menu"
@@ -57,12 +57,12 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute top-full mt-2 left-0 w-full bg-black/90 backdrop-blur-md border border-white/10 rounded-lg p-4 space-y-4 md:hidden">
+          <div className="absolute left-0 w-full p-4 mt-2 space-y-4 border rounded-lg top-full bg-black/90 backdrop-blur-md border-white/10 md:hidden">
             <MobileNavLink href="#testimonial" text="Review" />
             <MobileNavLink href="#work" text="Work" />
             <MobileNavLink href="#case-study" text="Case Study" />
             <MobileNavLink href="#Process" text="Process" />
-            <Link href="#book-a-call" className="block bg-white text-black px-4 py-2 rounded text-center font-semibold">
+            <Link href="#book-a-call" className="block px-4 py-2 font-semibold text-center text-black bg-white rounded">
               Book a call
             </Link>
           </div>
@@ -75,7 +75,7 @@ export default function Navbar() {
 // Desktop Nav Link
 function NavLink({ href, text }) {
   return (
-    <Link href={href} className="text-white hover:text-gray-300 transition font-medium">
+    <Link href={href} className="font-medium text-white transition hover:text-gray-300">
       {text}
     </Link>
   );
@@ -84,7 +84,7 @@ function NavLink({ href, text }) {
 // Mobile Nav Link
 function MobileNavLink({ href, text }) {
   return (
-    <Link href={href} className="block text-white font-medium hover:text-gray-300">
+    <Link href={href} className="block font-medium text-white hover:text-gray-300">
       {text}
     </Link>
   );

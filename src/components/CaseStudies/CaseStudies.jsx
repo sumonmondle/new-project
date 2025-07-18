@@ -6,8 +6,8 @@ import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 
 function CaseStudies() {
   return (
-    <div className="bg-black text-white pt-16">
-      <div className="text-center pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="pt-16 text-white bg-black">
+      <div className="px-4 pt-16 pb-12 text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           style={{ fontFamily: "'Syne', sans-serif" }}
-          className="text-3xl pt-2 font-semibold"
+          className="pt-2 text-3xl font-semibold"
         >
           Case studies
         </motion.div>
@@ -56,7 +56,7 @@ function CaseStudies() {
         >
           {/* 01 Case study - full width */}
           <div className="w-full">
-            <div className="text-white text-sm font-semibold tracking-widest select-none mb-2">01 &nbsp;&nbsp;&nbsp;&nbsp;Case study</div>
+            <div className="mb-2 text-sm font-semibold tracking-widest text-white select-none">01 &nbsp;&nbsp;&nbsp;&nbsp;Case study</div>
           </div>
         </motion.div>
 
@@ -68,8 +68,8 @@ function CaseStudies() {
         >
           {/* Case study text - full width */}
           <div className="w-full">
-            <h3 className="text-white font-bold text-3xl sm:text-4xl leading-tight">
-              <span className="block mb-2 text-gray-400 font-sans font-medium">“With just 5,000 subscribers,</span>
+            <h3 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
+              <span className="block mb-2 font-sans font-medium text-gray-400">“With just 5,000 subscribers,</span>
               <span>Spencer now generates $350K per month"</span>
             </h3>
           </div>
@@ -86,14 +86,14 @@ function CaseStudies() {
             {/* Profile */}
             <div className="flex items-center space-x-4">
               <img
-                src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/680dc0e9a9db68aa77dbb9b8_JPEG%20image-DC93A76EB7C6-1%20Large.avif"
+                src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/680357673bf2451641c3e59e_49450176611_d46ff738a1.avif"
                 alt="Neel Nafis"
                 loading="lazy"
-                className="w-20 h-20 rounded-full object-cover"
+                className="object-cover w-20 h-20 rounded-full"
               />
               <div>
-                <div className="text-white font-semibold text-lg">Neel Nafis</div>
-                <p className="text-gray-400 text-sm">Founder</p>
+                <div className="text-lg font-semibold text-white">Neel Nafis</div>
+                <p className="text-sm text-gray-400">Founder</p>
               </div>
             </div>
 
@@ -114,13 +114,13 @@ function CaseStudies() {
         </motion.div>
 
         {/* Stats and Video row */}
-        <div className="flex flex-col md:flex-row justify-between items-center w-full gap-8">
+        <div className="flex flex-col items-center justify-between w-full gap-8 md:flex-row">
           {/* Stats */}
           <div className="flex space-x-12">
-            <div className="flex flex-col justify-between items-start gap-6 font-serif">
+            <div className="flex flex-col items-start justify-between gap-6 font-serif">
               <div id="stat-holder" className="text-left">
-                <h3 className="text-white text-4xl font-extrabold">250%</h3>
-                <p className="text-gray-400 text-sm">Revenue Growth</p>
+                <h3 className="text-4xl font-extrabold text-white">250%</h3>
+                <p className="text-sm text-gray-400">Revenue Growth</p>
               </div>
 
               <div
@@ -131,8 +131,8 @@ function CaseStudies() {
 
             <div className="flex flex-col justify-end items-start gap-6 max-w-[203px] w-full font-serif">
               <div className="text-left">
-                <h3 className="text-white text-4xl font-extrabold">200%</h3>
-                <p className="text-gray-400 text-sm">Saved on Ads</p>
+                <h3 className="text-4xl font-extrabold text-white">200%</h3>
+                <p className="text-sm text-gray-400">Saved on Ads</p>
               </div>
 
               <div
