@@ -6,9 +6,9 @@ import Image from "next/image";
 
 function DoDifferently() {
   return (
-    <div className="relative bg-black text-white overflow-hidden pt-24 pb-32 px-4 sm:px-6 lg:px-8">
+    <div className="relative px-4 pt-24 pb-32 overflow-hidden text-white bg-black sm:px-6 lg:px-8">
       {/* Glowing Background Overlay */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+      <div className="absolute z-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div className="bg-white/10 w-[700px] h-[700px] rounded-full blur-[100px] opacity-80 mix-blend-overlay"></div>
 
         {/* Blue Glow Layer 1 – Sharp Blue Core */}
@@ -31,12 +31,12 @@ function DoDifferently() {
       </div>
 
       {/* Heading Section */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="uppercase text-sm font-semibold font-syne tracking-widest text-gray-300"
+          className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
         >
           why choose us
         </motion.div>
@@ -52,7 +52,7 @@ function DoDifferently() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-3xl font-syne pt-2 font-semibold"
+          className="pt-2 text-3xl font-semibold font-syne"
         >
           We Do Differently
         </motion.p>
@@ -64,20 +64,20 @@ function DoDifferently() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
           <div className="relative bg-gradient-to-b from-[#1e2230] via-[#0e0e0f] to-black rounded-[24px] p-9 text-white md:w-[470px] w-full mx-auto shadow-xl overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="">
-              <div className="flex items-center gap-3 mb-6 relative">
+              <div className="relative flex items-center gap-3 mb-6">
                 <Image
-                  src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679730756024f0575fc9327f_Mz%20media%20logo.avif"
+                  src="/image/Logo png.png"
                   alt="Company Logo"
                   width={80}
                   height={40}
-                  className="w-60 h-16"
+                  className="h-16 w-60"
                 />
                 <Image
                   src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679f48af45ca11634cdee639_Arrow.svg"
                   alt="Arrow"
                   width={30}
                   height={30}
-                  className="h-6 w-6 absolute left-20 top-11"
+                  className="absolute w-6 h-6 left-20 top-11"
                 />
               </div>
             </motion.div>
@@ -108,7 +108,7 @@ function DoDifferently() {
 
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="">
               <div className="w-full mt-10 rounded-[12px] border border-[#333] bg-gradient-to-b from-[#181818] to-[#000] text-white p-5 flex flex-col gap-2">
-                <h4 className="font-semibold text-base  mb-4">Bonuses you get with us:</h4>
+                <h4 className="mb-4 text-base font-semibold">Bonuses you get with us:</h4>
 
                 <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans">
                   {["Free Go High Level Subscription", "Free 1-on-1 Consultancy"].map((bonus, idx) => (
@@ -167,7 +167,7 @@ function DoDifferently() {
       </div>
 
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="">
-        <div className="w-full flex justify-center items-center py-10">
+        <div className="flex items-center justify-center w-full py-10">
           <a
             href="#book-a-call"
             className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300 hover:opacity-90

@@ -48,10 +48,10 @@ function YouLeadsTimeline() {
   };
 
   // Tag animations: Upward tags move outward
-  const tag1X = useTransform(step1Scroll, [0, 1], ["0%", "50%"]);
-  const tag1Y = useTransform(step1Scroll, [0, 1], ["0%", "50%"]);
-  const tag2X = useTransform(step1Scroll, [0, 1], ["0%", "-60%"]);
-  const tag2Y = useTransform(step1Scroll, [0, 1], ["40%", "0%"]);
+  const tag1X = useTransform(step1Scroll, [0, 0.5,1], ["10%","0%" ,"10%"]);
+  const tag1Y = useTransform(step1Scroll, [0,0.5, 1], ["10%","0%" ,"10%"]);
+  const tag2X = useTransform(step1Scroll, [0,0.5, 1], ["-10%", "0%","-10%"]);
+  const tag2Y = useTransform(step1Scroll, [0, 0.5,1], ["10%", "0%","10%"]);
 
   // Step 2
   const tag3X = useTransform(step2Scroll, [0, 0.5, 1], ["40%", "45%", "40%"]);
@@ -116,7 +116,7 @@ function YouLeadsTimeline() {
 
       <div className="relative w-full max-w-5xl mx-auto ">
         {/* Timeline Line */}
-        <div className="hidden md:block absolute left-1/2 top-0 h-full w-[1px] bg-white/5 z-0">
+        <div className="hidden lg:block absolute left-1/2 top-0 h-full w-[1px] bg-white/5 z-0">
           <div className={`inner-blue-line transition-all duration-700 ease-in-out ${lineHeightMap[activeStep]}`}></div>
         </div>
 
@@ -124,57 +124,57 @@ function YouLeadsTimeline() {
 
         <div
           ref={(el) => (stepsRef.current[0] = el)}
-          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-24 text-white md:flex-row"
+          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-24 text-white lg:flex-row"
         >
           <div
-            className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
+            className="order-1 lg:order-2 flex justify-center items-center w-[80px] h-[80px] lg:h-[70px] rounded-full
          border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
          text-white text-[18px] shadow-[0_0_45.1px_rgba(86,86,229,0.3)] mx-auto"
           >
             01
           </div>
-          <div className="order-2 w-full text-center md:order-1 md:w-1/2 md:pr-10 md:text-left">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] md:items-start items-center mx-auto md:mx-0">
-              <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
+          <div className="order-2 w-full text-center lg:order-1 lg:w-1/2 md:pr-10 lg:pl-10 lg:text-left">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] lg:items-start items-center mx-auto lg:mx-0">
+              <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
             </div>
-            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto md:mx-0">
+            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
               We take your ideas and analyze them thoroughly based on our experience and existing market standards.
             </p>
           </div>
           <div
             ref={step1Ref}
-            className="order-3 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative
-               pb-[320px] md:pb-0"
+            className="order-3 lg:order-3 w-full lg:w-1/2 text-center lg:text-right flex flex-col items-center lg:items-end relative
+               pb-[320px] lg:pb-0"
           >
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 md:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-16"
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a706e0b3217385d044_tag%204.avif"
               alt="Tag 1"
-              className="w-[160px]  absolute z-10 md:left-80 left-48 top-20 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="md:w-[160px] w-24 absolute z-10 md:left-80 lg:left-64 left-48 top-20 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
               style={{ x: tag1X, y: tag1Y, rotate: 332 }}
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a7b71a60f057a75d5a_tag%203.avif"
               alt="Tag 2"
-              className="w-[140px]  absolute md:right-32 right-56 top-24 z-10 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="md:w-[140px] w-24  absolute lg:right-32 right-56 top-24 z-10 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
               style={{ x: tag2X, y: tag2Y, rotate: 21 }}
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a7492d6fd645d90cf9_tag%202.avif"
               alt="Tag 3"
-              className="w-[150px]  absolute md:-bottom-60 bottom-8 md:left-32 left-8 z-10 rotate-[-18deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="md:w-[150px] w-24  absolute lg:-bottom-60 bottom-8 lg:left-32 left-8 z-10 rotate-[-18deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a77447cd58110ed2b8_tag%201.avif"
               alt="Tag 4"
-              className="w-[105px]  absolute md:-bottom-64 bottom-16 right-24 md:right-8 z-10 rotate-[21deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="md:w-[105px] w-24  absolute lg:-bottom-64 bottom-16 right-24 lg:right-8 z-10 rotate-[21deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
             />
           </div>
         </div>
@@ -183,10 +183,10 @@ function YouLeadsTimeline() {
 
         <div
           ref={(el) => (stepsRef.current[1] = el)}
-          className="relative z-10 flex flex-col items-start justify-between gap-6 text-white md:flex-row mb-44"
+          className="relative z-10 flex flex-col items-start justify-between gap-6 text-white lg:flex-row mb-44"
         >
           <div
-            className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
+            className="order-1 lg:order-2 flex justify-center items-center w-[80px] h-[80px] lg:h-[70px] rounded-full
      border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
      text-white text-[18px] shadow-[0_0_45.1px_rgba(86,86,229,0.3)] mx-auto"
           >
@@ -194,14 +194,14 @@ function YouLeadsTimeline() {
           </div>
           <div
             ref={step2Ref}
-            className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start relative pb-[320px] md:pb-0"
+            className="order-2 lg:order-1 w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start relative pb-[320px] lg:pb-0"
           >
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 md:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-16"
             />
-            <div className="absolute z-30 md:top-[23%] top-1 md:left-[-7%] left-[21%] w-[230px]">
+            <div className="absolute z-30 lg:top-[23%] top-1 lg:left-[-7%] left-[21%] w-[230px]">
               <div className="relative ">
                 <motion.img
                   src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6daa5744c735ff068b073_input%20box.png"
@@ -234,15 +234,15 @@ function YouLeadsTimeline() {
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd3525079b2a2e62ac95_card%201.avif"
               alt="Tag 3"
-              className="md:w-[350px] w-full md:mx-auto absolute  z-10 top-28 md:left-8 md:p-0 p-10 shadow-[0_9px_20px_-2px_#00000]"
+              className="lg:w-[350px] w-full lg:mx-auto absolute  z-10 top-28 lg:left-8 lg:p-0 p-10 shadow-[0_9px_20px_-2px_#00000]"
             />
           </div>
-          <div className="order-3 w-full text-center md:order-3 md:w-1/2 md:pl-10 md:text-right">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-start md:items-end mx-auto md:ml-auto">
-              <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
+          <div className="order-3 w-full text-center lg:order-3 lg:w-1/2 lg:pl-10 lg:text-right">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-start lg:items-end mx-auto lg:ml-auto">
+              <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
                 We take your ideas and analyze them thoroughly based on our experience and existing market standards.
               </p>
@@ -254,57 +254,57 @@ function YouLeadsTimeline() {
 
         <div
           ref={(el) => (stepsRef.current[2] = el)}
-          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-48 text-white md:flex-row"
+          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-48 text-white lg:flex-row"
         >
           <div
-            className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
+            className="order-1 lg:order-2 flex justify-center items-center w-[80px] h-[80px] lg:h-[70px] rounded-full
          border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
          text-white text-[18px] shadow-[0_0_45.1px_rgba(86,86,229,0.3)] mx-auto"
           >
             03
           </div>
-          <div className="order-2 w-full text-center md:order-1 md:w-1/2 md:pr-10 md:text-left">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] md:items-start items-center mx-auto md:mx-0">
-              <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
+          <div className="order-2 w-full text-center lg:order-1 lg:w-1/2 lg:pr-10 lg:text-left">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] lg:items-start items-center mx-auto lg:mx-0">
+              <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
             </div>
-            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto md:mx-0">
+            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
               We take your ideas and analyze them thoroughly based on our experience and existing market standards.
             </p>
           </div>
           <div
             ref={step3Ref}
-            className="order-3 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative
-               pb-[320px] md:pb-0"
+            className="order-3 lg:order-3 w-full lg:w-1/2 text-center lg:text-right flex flex-col items-center lg:items-end relative
+               pb-[320px] lg:pb-0"
           >
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 md:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-16"
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd368a7f0840c7932011_icon%201.avif"
               alt="Tag 1"
-              className="w-[170px] absolute z-10 md:left-44 left-36 top-0 md:-top-12 rounded-full "
+              className="w-[170px] absolute z-10 lg:left-44 left-20 top-0 lg:-top-12 rounded-full "
               style={{ x: tag4X, y: tag4Y, rotate: 0 }}
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36ed14bc9ea8341c97_icon%202.avif"
               alt="Tag 2"
-              className="w-[110px] absolute md:right-32 right-11 md:block hidden top-32 md:top-20 z-10 rounded-full "
+              className="w-[110px] absolute md:right-32 lg:right-40 right-11 lg:block hidden top-32 lg:top-20 z-10 rounded-full "
               style={{ x: tag5X, y: tag5Y, rotate: 17 }}
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b73326861ecd43aa1089d3_tag%203.avif"
               alt="Tag 3"
-              className="w-[49px] absolute md:-bottom-60 bottom-8 md:left-32 left-20 z-10 rotate-[-360deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="w-[49px] absolute lg:-bottom-60 bottom-8 lg:left-32 left-20 z-10 rotate-[-360deg] rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd354eb81fe4d982b5df_video%20editing%20canvas.avif"
               alt="Tag 4"
-              className="w-[428px] absolute md:-bottom-96 bottom-16 right-24 md:-right-16 z-10 hidden md:block "
+              className="w-[428px] absolute lg:-bottom-96 bottom-16 right-24 lg:-right-16 z-10 hidden xl:block "
             />
           </div>
         </div>
@@ -313,10 +313,10 @@ function YouLeadsTimeline() {
 
         <div
           ref={(el) => (stepsRef.current[3] = el)}
-          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-16 text-white md:flex-row"
+          className="relative z-10 flex flex-col items-start justify-between gap-6 mb-16 text-white lg:flex-row"
         >
           <div
-            className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
+            className="order-1 lg:order-2 flex justify-center items-center w-[80px] h-[80px] lg:h-[70px] rounded-full
     border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
     text-white text-[18px] shadow-[0_0_45.1px_rgba(86,86,229,0.3)] mx-auto"
           >
@@ -325,15 +325,15 @@ function YouLeadsTimeline() {
 
           <div
             ref={step4Ref}
-            className="relative flex flex-col items-center order-2 w-full text-center md:order-1 md:w-1/2 md:text-left md:items-start "
+            className="relative flex flex-col items-center order-2 w-full text-center lg:order-1 lg:w-1/2 lg:text-left lg:items-start "
           >
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-44 md:left-8"
+              className="absolute left-0 z-0 w-full opacity-100 -top-44 lg:left-8"
             />
 
-            <div ref={containerRef} className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-xl ">
+            <div ref={containerRef} className="relative w-full h-[300px] lg:h-[400px] overflow-hidden rounded-xl ">
               <motion.img
                 src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0be7a053c01e6bb522_Iman%20gadzhi.avif"
                 alt="Iman"
@@ -358,17 +358,17 @@ function YouLeadsTimeline() {
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b707fc23c7175ae432a4ca_Thumbnail%20icon.avif"
               alt="Thumbnail"
-              className="absolute z-10 hidden w-32 h-32 md:block"
+              className="absolute z-10 hidden w-32 h-32 lg:block"
               style={{ x: tag8X, y: tag8Y, rotate: 12 }}
             />
           </div>
 
-          <div className="order-3 w-full text-center md:order-3 md:w-1/2 md:text-right">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-start md:items-end mx-auto md:ml-auto">
-              <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
+          <div className="order-3 w-full text-center lg:order-3 lg:w-1/2 lg:text-right">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-start lg:items-end mx-auto lg:ml-auto">
+              <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
                 We take your ideas and analyze them thoroughly based on our experience and existing market standards.
               </p>
@@ -380,24 +380,24 @@ function YouLeadsTimeline() {
 
         {/* STEP-5  */}
 
-        <div ref={ref} className="relative z-10 flex flex-col items-start justify-between gap-6 mb-24 text-white md:flex-row">
+        <div ref={ref} className="relative z-10 flex flex-col items-start justify-between gap-6 mb-24 text-white lg:flex-row">
           <div
-            className="order-1 md:order-2 flex justify-center items-center w-[80px] h-[80px] md:h-[70px] rounded-full
+            className="order-1 lg:order-2 flex justify-center items-center w-[80px] h-[80px] lg:h-[70px] rounded-full
       border border-[#2c3138] bg-gradient-to-b from-[#181929] to-[#020205]
       text-white text-[18px] shadow-[0_0_45.1px_rgba(86,86,229,0.3)] mx-auto"
           >
             05
           </div>
 
-          <div className="order-2 md:order-3 w-full md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end relative pb-[320px] md:pb-0">
+          <div className="order-2 lg:order-3 w-full lg:w-1/2 text-center lg:text-right flex flex-col items-center lg:items-end relative pb-[320px] lg:pb-0">
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 md:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-16"
             />
 
             {inView && (
-              <div className="absolute z-0 w-40 h-32 pointer-events-none bottom-10 left-6 md:-bottom-28 md:left-24 rotate-12">
+              <div className="absolute z-0 w-40 h-32 pointer-events-none bottom-10 left-6 lg:-bottom-28 lg:left-24 rotate-12">
                 <Lottie animationData={animationData} loop={false} />
               </div>
             )}
@@ -405,33 +405,33 @@ function YouLeadsTimeline() {
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fea4de667cb6f255f2a2_view%20icon.avif"
               alt="Tag 3"
-              className="w-[260px] md:w-[400px] absolute md:-bottom-80 bottom-6 md:left-32 left-4 z-10 rounded-full"
+              className="w-[260px] lg:w-[400px] absolute lg:-bottom-80 bottom-6 lg:left-32 left-4 z-10 rounded-full"
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fddc63aa60dafdeff726_you%20tube%20icon-1.avif"
               alt="Tag 4"
-              className="w-[70px] md:w-[90px] absolute md:-bottom-[254px] bottom-10 right-24 md:right-52 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="w-[70px] lg:w-[90px] absolute lg:-bottom-[254px] bottom-10 right-24 lg:right-52 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b731d891c16c44b9310086_Group%201618874258.avif"
               alt="Tag 4"
-              className="w-[90px] md:w-[120px] absolute hidden md:block md:bottom-[-16px] md:right-48 rounded-full"
+              className="w-[90px] lg:w-[120px] absolute hidden lg:block lg:bottom-[-16px] lg:right-48 rounded-full"
             />
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6fe2b0c2c7cfd9f95e99a_you%20tube%20icon.avif"
               alt="Tag 4"
-              className="w-[100px] md:w-[150px] absolute bottom-36 md:-bottom-20 right-28 md:-right-24 rounded-full"
+              className="w-[100px] lg:w-[150px] absolute bottom-36 lg:-bottom-20 right-28 lg:-right-24 rounded-full"
             />
           </div>
 
-          <div className="order-3 w-full text-center md:order-1 md:w-1/2 md:pr-10 md:text-left">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center md:items-start mx-auto md:mx-0">
-              <div className="uppercase bg-[#3636ff] hidden md:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
+          <div className="order-3 w-full text-center lg:order-1 lg:w-1/2 lg:pr-10 lg:text-left">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-center lg:items-start mx-auto lg:mx-0">
+              <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
             </div>
-            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto md:mx-0">
+            <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
               We take your ideas and analyze them thoroughly based on our experience and existing market standards.
             </p>
           </div>

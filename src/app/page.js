@@ -1,5 +1,6 @@
 import AboutUsSlider from "@/components/AboutUsSlider/AboutUsSlider";
 import AnimatedSection from "@/components/AnimatedSection/AnimatedSection";
+import BenefitOurClients from "@/components/BenefitOurClients/BenefitOurClients";
 import CaseStudies from "@/components/CaseStudies/CaseStudies";
 import DoDifferently from "@/components/DoDifferently/DoDifferently";
 
@@ -39,6 +40,7 @@ function page() {
         </div>
       </AnimatedSection>
       <WeDo></WeDo>
+      <BenefitOurClients></BenefitOurClients>
 
     </div>
   );

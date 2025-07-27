@@ -23,7 +23,7 @@ export default function Navbar() {
             alt="Brand Logo"
             width={120}
             height={40}
-            className="w-auto h-auto"
+            className="w-[130px] h-[37px]"
           />
         </Link>
 
