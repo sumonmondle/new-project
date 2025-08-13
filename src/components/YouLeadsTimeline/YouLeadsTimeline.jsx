@@ -152,7 +152,7 @@ function YouLeadsTimeline() {
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-0 md:left-16 xl:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-0 md:left-0 xl:left-16"
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a706e0b3217385d044_tag%204.avif"
@@ -282,7 +282,7 @@ function YouLeadsTimeline() {
             <img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif"
               alt="Glow"
-              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-0 md:left-16 xl:left-16"
+              className="absolute left-0 z-0 w-full opacity-100 -top-20 lg:left-0 md:left-0 xl:left-16"
             />
             <motion.img
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd368a7f0840c7932011_icon%201.avif"
@@ -364,7 +364,7 @@ function YouLeadsTimeline() {
           </div>
 
           <div className="order-3 w-full text-center lg:order-3 lg:w-1/2 lg:text-right">
-            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] items-start lg:items-end mx-auto lg:ml-auto">
+            <div className="flex flex-col gap-[27px] rounded-[20px] py-[30px] w-full max-w-[350px] md:items-start items-center lg:items-end mx-auto lg:ml-auto">
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>

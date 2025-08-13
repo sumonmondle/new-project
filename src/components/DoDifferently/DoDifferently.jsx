@@ -60,8 +60,8 @@ function DoDifferently() {
 
       {/* Pricing Card */}
 
-      <div className="md:w-[60rem] w-full mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+      <div className="lg:w-[60rem] w-full mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
           <div className="relative bg-gradient-to-b from-[#1e2230] via-[#0e0e0f] to-black rounded-[24px] p-9 text-white md:w-[470px] w-full mx-auto shadow-xl overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="">
               <div className="relative flex items-center gap-3 mb-6">
