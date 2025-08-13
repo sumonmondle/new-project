@@ -17,7 +17,7 @@ export default function HeroSection() {
   const videoToRender = headerVideo && headerVideo?.src ? headerVideo : defaultVideo;
   return (
     <section
-      className="relative flex items-center justify-center w-full min-h-screen px-4 pt-16 bg-top bg-cover pb-14 md:pt-40"
+      className="relative flex items-center justify-center w-full min-h-screen px-4 bg-top bg-cover pt-28 pb-14 md:pt-40"
       style={{
         backgroundImage: "url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679651def5e214bba9495e68_Hero%20Glow%20BG-p-2000.webp')",
       }}

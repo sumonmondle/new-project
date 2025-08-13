@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function DoDifferently() {
   return (
-    <div className="relative px-4 pt-24 pb-32 overflow-hidden text-white bg-black sm:px-6 lg:px-8">
+    <div className="relative px-4 pt-6 pb-0 overflow-hidden text-white bg-black md:pb-32 md:pt-24 sm:px-6 lg:px-8">
       {/* Glowing Background Overlay */}
       <div className="absolute z-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div className="bg-white/10 w-[700px] h-[700px] rounded-full blur-[100px] opacity-80 mix-blend-overlay"></div>

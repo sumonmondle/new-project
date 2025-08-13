@@ -91,9 +91,9 @@ function WorkProjectSection() {
   const filteredVideos = videos?.filter((v) => v?.category === activeCategory);
 
   return (
-    <div className="bg-black text-white pt-10">
+    <div className="pt-0 text-white bg-black md:pt-10">
       {/* Heading */}
-      <div className="text-center py-16 px-4 sm:px-6 lg:px-8">
+      <div className="px-4 pt-0 pb-16 text-center md:py-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ function WorkProjectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           style={{ fontFamily: "'Syne', sans-serif" }}
-          className="text-3xl pt-2 font-semibold"
+          className="pt-2 text-3xl font-semibold"
         >
           featured projects
         </motion.div>
@@ -157,7 +157,7 @@ function WorkProjectSection() {
               const aspectRatio = isShorts ? "177.77%" : "56.25%"; // 9:16 or 16:9
 
               return (
-                <div key={idx} className="relative w-full rounded-lg overflow-hidden cursor-pointer" style={{ paddingTop: aspectRatio }}>
+                <div key={idx} className="relative w-full overflow-hidden rounded-lg cursor-pointer" style={{ paddingTop: aspectRatio }}>
                   {playingIndex === idx ? (
                     <>
                       <iframe
@@ -170,12 +170,12 @@ function WorkProjectSection() {
                       ></iframe>
                       <button
                         onClick={() => setPlayingIndex(null)}
-                        className="absolute top-2 right-2 z-50 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-80 transition"
+                        className="absolute z-50 p-2 text-white transition bg-black bg-opacity-50 rounded-full top-2 right-2 hover:bg-opacity-80"
                         aria-label="Close video"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
+                          className="w-6 h-6"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -190,12 +190,12 @@ function WorkProjectSection() {
                       <img
                         src={video?.thumbnailURL}
                         alt="Video Thumbnail"
-                        className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                        className="absolute top-0 left-0 object-cover w-full h-full rounded-lg"
                         onClick={() => setPlayingIndex(idx)}
                       />
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="w-16 h-16 bg-white bg-opacity-75 rounded-full flex items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-75 rounded-full">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>

@@ -6,8 +6,8 @@ import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 
 function CaseStudies() {
   return (
-    <div className="pt-16 text-white bg-black">
-      <div className="px-4 pt-16 pb-12 text-center sm:px-6 lg:px-8">
+    <div className="pt-0 text-white bg-black md:pt-16">
+      <div className="px-4 pt-0 pb-12 text-center md:pt-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ function CaseStudies() {
             {/* Button */}
             <a
               href="#book-a-call"
-              className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300"
+              className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] md:block hidden text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300"
             >
               <div>Book a call</div>
               <img
