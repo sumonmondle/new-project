@@ -4,6 +4,7 @@ import AnyQueries from "@/components/AnyQueries/AnyQueries";
 import BenefitOurClients from "@/components/BenefitOurClients/BenefitOurClients";
 import CaseStudies from "@/components/CaseStudies/CaseStudies";
 import DoDifferently from "@/components/DoDifferently/DoDifferently";
+import Footer from "@/components/Footer/Footer";
 
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
@@ -47,6 +48,7 @@ function page() {
         <WorkWithUs></WorkWithUs>
       </AnimatedSection>
       <AnyQueries></AnyQueries>
+      <Footer></Footer>
     </div>
   );
 }

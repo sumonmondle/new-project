@@ -14,8 +14,8 @@ export default function AnimatedParallaxSection() {
     offset: ["start end", "end start"],
   });
 
-  const leftImageX = useTransform(scrollYProgress, [0, 1], [0, -350]);
-  const rightImageX = useTransform(scrollYProgress, [0, 1], [0, 350]);
+  const leftImageX = useTransform(scrollYProgress, [0, 1], [-200, -300]);
+  const rightImageX = useTransform(scrollYProgress, [0, 1], [150, 250]);
 
   const opacity1 = useTransform(scrollYProgress, [0, 0.3], [0.2, 1]);
   const opacity2 = useTransform(scrollYProgress, [0, 0.4], [0.2, 1]);
@@ -23,7 +23,7 @@ export default function AnimatedParallaxSection() {
 
   return (
     <div className="bg-black">
-      <section ref={sectionRef} className="relative w-full flex items-center justify-center py-8 overflow-hidden hidden md:flex">
+      <section ref={sectionRef} className="relative flex items-center justify-center hidden w-full py-8 overflow-hidden md:flex">
         <motion.div
           ref={ref}
           className="absolute left-[15%] lg:left-[23%] !top-[25%] -translate-y-1/2 flex flex-col gap-4 z-10"
@@ -58,7 +58,7 @@ export default function AnimatedParallaxSection() {
           />
         </motion.div>
 
-        <div ref={ref} className=" text-center space-y-5 px-4 py-32 bg-black ">
+        <div ref={ref} className="px-4 py-32 space-y-5 text-center bg-black ">
           <motion.h2
             style={{ opacity: opacity1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -88,9 +88,9 @@ export default function AnimatedParallaxSection() {
       <section className="flex flex-row flex-wrap  border-[#ffffff0f] items-center justify-center md:items-center lg:flex-row gap-6 md:gap-32 bg-black px-4 py-8  ">
         {/* Block 1 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
-          <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
+          <div className="text-2xl font-bold text-center md:text-4xl font-geist md:text-left">
             <SmartCount end={200} duration={5} />
-            <span className="text-xl md:text-3xl ml-1">%</span>
+            <span className="ml-1 text-xl md:text-3xl">%</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Engagement</p>
           <p className="text-[#999999] hidden md:block text-left text-sm md:text-base mt-3 font-syne w-full">Viral Edits</p>
@@ -98,9 +98,9 @@ export default function AnimatedParallaxSection() {
 
         {/* Block 2 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
-          <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
+          <div className="text-2xl font-bold text-center md:text-4xl font-geist md:text-left">
             <SmartCount end={5} duration={5} />
-            <span className="text-xl md:text-3xl ml-1">X</span>
+            <span className="ml-1 text-xl md:text-3xl">X</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Reach</p>
           <p className="text-[#999999] hidden md:block text-left text-sm md:text-base mt-3 font-syne w-full">Strategic Distribution</p>
@@ -108,9 +108,9 @@ export default function AnimatedParallaxSection() {
 
         {/* Block 3 */}
         <div className="w-[120px] md:w-[192px] text-white flex flex-col items-center md:items-start relative">
-          <div className="text-2xl md:text-4xl font-bold font-geist text-center md:text-left">
+          <div className="text-2xl font-bold text-center md:text-4xl font-geist md:text-left">
             <SmartCount end={50} duration={5} />
-            <span className="text-xl md:text-3xl ml-1">%</span>
+            <span className="ml-1 text-xl md:text-3xl">%</span>
           </div>
           <p className="text-white text-sm md:text-base mt-3 font-syne pl-[0px] md:pl-[48px] text-right md:text-left w-full">More Leads</p>
           <p className="text-[#999999] hidden md:block text-left text-sm md:text-base mt-3 font-syne w-full">Automated Systems</p>
@@ -119,7 +119,7 @@ export default function AnimatedParallaxSection() {
 
       <div className="border-[#ffffff0f] border-b-2 pt-4 max-w-4xl mx-auto"></div>
 
-      <div className="pt-16 px-4 sm:px-6 lg:px-8 bg-black text-center text-white">
+      <div className="px-4 pt-16 text-center text-white bg-black sm:px-6 lg:px-8">
         {/* Badge with animation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -5,23 +5,31 @@ import Image from "next/image";
 import Link from "next/link";
 import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 import TiltController from "../TiltController/TiltController";
+import useHeaderVideo from "@/hook/useHeaderVideo";
 
 export default function HeroSection() {
+  const { isPending, error, headerVideo, refetch } = useHeaderVideo();
+  const defaultVideo = {
+    thumbnail: "https://embed-ssl.wistia.com/deliveries/d70c018134211b2cef054003cd784398.webp?image_crop_resized=1920x1080",
+    src: "https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE",
+  };
+
+  const videoToRender = headerVideo && headerVideo?.src ? headerVideo : defaultVideo;
   return (
     <section
-      className="relative w-full min-h-screen bg-cover  flex items-center justify-center px-4 pt-16 pb-14 md:pt-32 bg-top"
+      className="relative flex items-center justify-center w-full min-h-screen px-4 pt-16 bg-top bg-cover pb-14 md:pt-40"
       style={{
         backgroundImage: "url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679651def5e214bba9495e68_Hero%20Glow%20BG-p-2000.webp')",
       }}
     >
       {/* Glass effect overlay */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-lg z-0 rounded-lg" />
+      <div className="absolute inset-0 z-0 rounded-lg bg-white/10 backdrop-blur-lg" />
 
       <div className="max-w-7xl mx-auto w-full text-center text-[#a8aeb6] relative z-10">
         {/* Header Text */}
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight font-geist">
-            <span className=" font-syne ">
+          <h1 className="text-4xl font-bold leading-tight md:text-6xl font-geist">
+            <span className=" font-syne">
               <span className="text-white/[#8b8e97]">
                 Get More Leads <br />
                 Using{" "}
@@ -39,7 +47,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Team Images */}
-        <div className="flex items-center justify-center pb-10 md:flex-row flex-col">
+        <div className="flex flex-col items-center justify-center pb-10 md:flex-row">
           {/* Images stacked with overlap */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -50,17 +58,17 @@ export default function HeroSection() {
             {teamImages.map((src, i) => (
               <div
                 key={i}
-                className="absolute rounded-full border-2 border-white overflow-hidden shadow-lg"
+                className="absolute overflow-hidden border-2 border-white rounded-full shadow-lg"
                 style={{ left: `${i * 28}px`, zIndex: teamImages.length - i }} // overlap with offset and zIndex for stacking order
               >
-                <Image src={src} alt="Client Photo" width={64} height={64} className="object-cover w-11 h-11 rounded-full" loading="lazy" />
+                <Image src={src} alt="Client Photo" width={64} height={64} className="object-cover rounded-full w-11 h-11" loading="lazy" />
               </div>
             ))}
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="">
             {/* Text Content */}
-            <div className="text-white/90 max-w-xl text-left">
+            <div className="max-w-xl text-left text-white/90">
               <p className="text-sm">Loved by 500+ Businesses worldwide.</p>
               <p className="mt-1 text-sm text-[#8b8e97]">Our Clients Speak for Us</p>
             </div>
@@ -93,15 +101,15 @@ export default function HeroSection() {
         >
           <TiltController>
             <VideoThumbnail
-              thamnailURL="https://embed-ssl.wistia.com/deliveries/d70c018134211b2cef054003cd784398.webp?image_crop_resized=1920x1080"
-              VideoURL="https://www.youtube.com/embed/xVqZ6ZSeMW4?si=C0jmHz5yMCQE15kE"
+              thamnailURL={videoToRender?.thumbnail}
+              VideoURL={videoToRender?.src}
             />
           </TiltController>
         </motion.div>
       </div>
 
       {/* Optional dark overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0" />
+      <div className="absolute inset-0 z-0 bg-black/30" />
     </section>
   );
 }
