@@ -17,9 +17,11 @@ export default function AboutUs() {
   const [avatarFile, setAvatarFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
+
   const fetchShorts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/about-us");
+      const res = await axios.get("https://backend-wine-chi-49.vercel.app/about-us");
       setShorts(res.data);
     } catch (err) {
       toast.error("Failed to fetch shorts");
@@ -55,7 +57,23 @@ export default function AboutUs() {
     return match ? match[1] : "";
   };
 
+  // এই ফাংশন handleSubmit এর শুরুতে বসাতে হবে
+  const isYouTubeShortLink = (url) => {
+    try {
+      const parsedUrl = new URL(url);
+      return parsedUrl.hostname.includes("youtube.com") && parsedUrl.pathname.startsWith("/shorts/");
+    } catch {
+      return false;
+    }
+  };
+
+
   const handleSubmit = async () => {
+    if (!isYouTubeShortLink(form.videoURL)) {
+      toast.error("Please enter a valid YouTube Shorts link");
+      return;
+    }
+
     if (!form.videoURL || !form.caption || !form.name || !form.profaction || (!form.avatar && !avatarFile)) {
       toast.error("All fields are required");
       return;
@@ -80,10 +98,10 @@ export default function AboutUs() {
       };
 
       if (form._id) {
-        await axios.put(`http://localhost:5000/about-us/${form._id}`, data);
+        await axios.put(`https://backend-wine-chi-49.vercel.app/about-us/${form._id}`, data);
         toast.success("Short updated successfully");
       } else {
-        await axios.post("http://localhost:5000/about-us", data);
+        await axios.post("https://backend-wine-chi-49.vercel.app/about-us", data);
         toast.success("Short uploaded successfully");
       }
 
@@ -113,7 +131,7 @@ export default function AboutUs() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/about-us/${id}`);
+      await axios.delete(`https://backend-wine-chi-49.vercel.app/about-us/${id}`);
       toast.success("Short deleted");
       fetchShorts();
     } catch (err) {

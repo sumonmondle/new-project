@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 function WorkProjectSection() {
   const [videos, setVideos] = useState([]);
@@ -8,84 +9,50 @@ function WorkProjectSection() {
   const [categories, setCategories] = useState([]);
   const [playingIndex, setPlayingIndex] = useState(null); // track which video is playing
 
-  const data = [
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://embed-ssl.wistia.com/deliveries/8ffb0fc08041438f62090b66379c841a.webp?image_crop_resized=1920x1130",
-      category: "Youtube Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://embed-ssl.wistia.com/deliveries/8ffb0fc08041438f62090b66379c841a.webp?image_crop_resized=1920x1130",
-      category: "Youtube Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://embed-ssl.wistia.com/deliveries/8ffb0fc08041438f62090b66379c841a.webp?image_crop_resized=1920x1130",
-      category: "Youtube Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://embed-ssl.wistia.com/deliveries/8ffb0fc08041438f62090b66379c841a.webp?image_crop_resized=1920x1130",
-      category: "Youtube Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Youtube Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Shorts",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "SAAS Videos",
-    },
-    {
-      videoURL: "https://www.youtube.com/embed/xVqZ6ZSeMW4",
-      thumbnailURL: "https://i3.ytimg.com/vi/xVqZ6ZSeMW4/maxresdefault.jpg",
-      category: "Ad Creatives & VSL",
-    },
-  ];
+  // Function to convert any YouTube URL (normal or shorts) to embed URL
+  const getEmbedURL = (url) => {
+    try {
+      let videoId = null;
+      if (url.includes("youtu.be/")) {
+        videoId = url.split("youtu.be/")[1].split("?")[0];
+      } else if (url.includes("/shorts/")) {
+        videoId = url.split("/shorts/")[1].split("?")[0];
+      } else if (url.includes("youtube.com/watch?v=")) {
+        videoId = url.split("v=")[1].split("&")[0];
+      }
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+    } catch {
+      return url;
+    }
+  };
 
   useEffect(() => {
-    setVideos(data);
-    const cats = Array?.from(new Set(data?.map((v) => v?.category)));
-    setCategories(cats);
-    setActiveCategory(cats[0]);
+    const fetchVideos = async () => {
+      try {
+        const res = await axios.get("https://backend-wine-chi-49.vercel.app/header-video-upload"); // আপনার API URL
+        const apiData = res.data.map((item) => ({
+          videoURL: item.src,
+          thumbnailURL: item.thumbnail,
+          category: item.category,
+        }));
+
+        // convert all video URLs to embed URLs
+        const updatedVideos = apiData.map((v) => ({
+          ...v,
+          videoURL: getEmbedURL(v.videoURL),
+        }));
+
+        setVideos(updatedVideos);
+
+        const cats = Array.from(new Set(updatedVideos.map((v) => v.category)));
+        setCategories(cats);
+        setActiveCategory(cats[0]);
+      } catch (error) {
+        console.error("Failed to fetch videos:", error);
+      }
+    };
+
+    fetchVideos();
   }, []);
 
   const filteredVideos = videos?.filter((v) => v?.category === activeCategory);
@@ -126,7 +93,11 @@ function WorkProjectSection() {
       </div>
 
       {/* Tabs */}
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
         <div className="flex flex-wrap gap-3 justify-center mb-8 px-4 sm:px-6 md:px-10 lg:px-[200px] xl:px-[300px] 2xl:px-[450px]">
           {categories?.map((cat) => (
             <button
@@ -146,10 +117,16 @@ function WorkProjectSection() {
           ))}
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+        >
           <div
             className={`grid gap-6 max-w-5xl mx-auto px-4 ${
-              activeCategory === "Shorts" ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3" : "sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
+              activeCategory === "Shorts"
+                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                : "sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
             }`}
           >
             {filteredVideos?.map((video, idx) => {
@@ -157,7 +134,11 @@ function WorkProjectSection() {
               const aspectRatio = isShorts ? "177.77%" : "56.25%"; // 9:16 or 16:9
 
               return (
-                <div key={idx} className="relative w-full overflow-hidden rounded-lg cursor-pointer" style={{ paddingTop: aspectRatio }}>
+                <div
+                  key={idx}
+                  className="relative w-full overflow-hidden rounded-lg cursor-pointer"
+                  style={{ paddingTop: aspectRatio }}
+                >
                   {playingIndex === idx ? (
                     <>
                       <iframe
@@ -181,7 +162,11 @@ function WorkProjectSection() {
                           strokeWidth="2"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
                         </svg>
                       </button>
                     </>
@@ -195,7 +180,12 @@ function WorkProjectSection() {
                       />
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-75 rounded-full">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-10 h-10 text-black"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>

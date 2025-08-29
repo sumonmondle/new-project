@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { BsFilterLeft } from "react-icons/bs";
 import Video from "../common/Video";
 import HeaderVideo from "../HeaderVideo/HeaderVideo";
-import Shorts from "../common/Shorts";
 import AboutUs from "../AboutUs/AboutUs";
 
 
@@ -87,8 +86,7 @@ const Dashboard = () => {
               {/* Menu Items with Dropdowns */}
               {[
                 { name: "Header Video", dropdownItems: [] },
-                { name: "All Yt Video", dropdownItems: [] },
-                { name: "All Yt Shorts", dropdownItems: [] },
+                { name: "Video & Shorts", dropdownItems: [] },
                 { name: "About Us", dropdownItems: [] },
                 { name: "Bank List Maintain", dropdownItems: ["Show All Banks", "Upload Bank Data", "Edit Bank Data"] },
                 { name: "Daily Earn List", dropdownItems: ["Daily list"] },
@@ -156,8 +154,8 @@ const Dashboard = () => {
          
             {activeComponent === "" && <div>   <h1>Welcome to admin page</h1></div>}
             {activeComponent === "Header Video" && <div><HeaderVideo></HeaderVideo></div>}
-            {activeComponent === "All Yt Video" && <div> <Video></Video> </div>}
-            {activeComponent === "All Yt Shorts" && <div> <Shorts></Shorts> </div>}
+            {activeComponent === "Video & Shorts" && <div> <Video></Video> </div>}
+           
             {activeComponent === "About Us" && <div> <AboutUs></AboutUs> </div>}
            
 

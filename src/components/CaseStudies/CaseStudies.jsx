@@ -100,7 +100,7 @@ function CaseStudies() {
             {/* Button */}
             <a
               href="#book-a-call"
-              className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] md:block hidden text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300"
+              className="flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] md:inline-flex hidden text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300"
             >
               <div>Book a call</div>
               <img
