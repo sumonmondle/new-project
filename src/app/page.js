@@ -47,6 +47,9 @@ function page() {
       <AnimatedSection id="book-a-call">
         <WorkWithUs></WorkWithUs>
       </AnimatedSection>
+      {/* <div id="book-a-call">
+         <WorkWithUs></WorkWithUs>
+      </div> */}
       <AnyQueries></AnyQueries>
       <Footer></Footer>
     </div>

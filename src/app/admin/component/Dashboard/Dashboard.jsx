@@ -5,6 +5,8 @@ import { BsFilterLeft } from "react-icons/bs";
 import Video from "../common/Video";
 import HeaderVideo from "../HeaderVideo/HeaderVideo";
 import AboutUs from "../AboutUs/AboutUs";
+import ContactAdmin from "../ContactAdmin/ContactAdmin";
+import InfluencerAdmin from "../InfluencerAdmin/InfluencerAdmin";
 
 
 
@@ -88,8 +90,9 @@ const Dashboard = () => {
                 { name: "Header Video", dropdownItems: [] },
                 { name: "Video & Shorts", dropdownItems: [] },
                 { name: "About Us", dropdownItems: [] },
-                { name: "Bank List Maintain", dropdownItems: ["Show All Banks", "Upload Bank Data", "Edit Bank Data"] },
-                { name: "Daily Earn List", dropdownItems: ["Daily list"] },
+                { name: "Contract", dropdownItems: [] },
+                // { name: "Daily Earn List", dropdownItems: ["Daily list"] },
+                { name: "Influencer", dropdownItems: [] },
               ].map((menu) => (
                 <li key={menu.name}>
                   <button
@@ -157,6 +160,8 @@ const Dashboard = () => {
             {activeComponent === "Video & Shorts" && <div> <Video></Video> </div>}
            
             {activeComponent === "About Us" && <div> <AboutUs></AboutUs> </div>}
+            {activeComponent === "Contract" && <div> <ContactAdmin></ContactAdmin> </div>}
+            {activeComponent === "Influencer" && <div> <InfluencerAdmin></InfluencerAdmin> </div>}
            
 
 

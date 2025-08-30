@@ -32,7 +32,7 @@ export default function AdminLogin() {
         }
     };
 
-    if (!isVerified) {
+    if (isVerified) {
         return <Dashboard />; // ✅ Show dashboard if verified
     }
 
@@ -50,6 +50,7 @@ export default function AdminLogin() {
                     <input
                         type="email"
                         value={email}
+                        placeholder="Enter Admin Email"
                         onChange={(e) => { setEmail(e.target.value); }}
                         className="w-full px-4 py-2 bg-white border rounded-md"
                     />
