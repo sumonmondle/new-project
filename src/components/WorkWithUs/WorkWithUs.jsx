@@ -163,7 +163,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import axios from "axios";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+
 
 export default function WorkWithUs() {
 
@@ -183,10 +184,19 @@ export default function WorkWithUs() {
       });
 
       if (res) {
-        toast.success('✅ Form submitted successfully!')
+        Swal.fire({
+          title: "Good job!",
+          text: "✅ Form submitted successfully!",
+          icon: "success"
+        });
         e.target.reset();
       } else {
-        toast.error("❌ Something went wrong!")
+        toast.error("")
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "❌ Something went wrong!",
+        });
       }
     } catch (error) {
       alert("❌ Server error!");
@@ -211,7 +221,7 @@ export default function WorkWithUs() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
         >
-         Let’s level up
+          Let’s level up
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
