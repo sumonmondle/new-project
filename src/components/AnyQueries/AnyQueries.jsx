@@ -117,30 +117,26 @@ import { FaCircleChevronDown } from "react-icons/fa6";
 
 const faqs = [
   {
-    question: "Tell me about your agency?",
+    question: "Tell me about your agency.",
     answer:
-      "At MZ Media, we help coaches and trainers build their personal brand through high quality video editing and social media marketing.",
+      "Lumenza helps creators, brands, and coaches grow with proven video strategies—delivering content that’s engaging, professional, and designed to convert audiences.",
   },
   {
-    question: "Tell me about your content plan?",
+    question: "Tell me about your content plan.",
     answer:
-      "We analyze your existing content, identify your niche and offer a comprehensive content plan catering to your personal brand.",
+      "We craft tailored content strategies using proven frameworks, storytelling, and market insights to help creators, brands, and coaches consistently stand out.",
   },
   {
     question: "What services will you provide?",
     answer:
-      "We offer video editing (YouTube, Shorts, Reels), promotional content, and social media marketing with proven ROI strategies.",
+      "We provide video editing, motion graphics, scripts, thumbnails, and distribution strategies—everything creators, brands, and coaches need to grow effectively.",
   },
   {
-    question: "What if I don’t get the results?",
+    question: " Why wouldn’t I hire a freelancer?",
     answer:
-      "We’ve helped scale dozens of brands using our proven content frameworks—it’s very unlikely it won’t work for you too. 😉",
+      "Freelancers may lack consistency and systems. With Lumenza, creators, brands, and coaches get structured execution, rapid delivery, and growth-focused strategies every time.",
   },
-  {
-    question: "Why wouldn’t I hire a freelancer?",
-    answer:
-      "We have a dedicated team of 30+ editors. Our quality and consistency always outperform individual freelancers.",
-  },
+ 
 ];
 
 function AnyQueries() {
@@ -198,9 +194,8 @@ function AnyQueries() {
                     {faq.question}
                   </span>
                   <FaCircleChevronDown
-                    className={`w-5 h-5 transform transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-5 h-5 transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 

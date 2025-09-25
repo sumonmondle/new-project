@@ -93,7 +93,7 @@ const WeDo = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
         >
-          why choose us
+          CORE SERVICES
         </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -101,7 +101,7 @@ const WeDo = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl md:text-4xl pt-2 font-bold font-syne bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
         >
-          Know What
+          Types Of Work
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -109,7 +109,7 @@ const WeDo = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="pt-2 text-3xl font-semibold text-white font-syne"
         >
-          We Do Differently
+          We Do
         </motion.p>
       </div>
 

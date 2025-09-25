@@ -103,3 +103,79 @@ body {
     transition: height 0.3s ease;
   }
 }
+
+
+/* globals.css */
+
+/* Keyframes - এই অ্যানিমেশনটি উপাদানকে অদৃশ্য (opacity 0) থেকে দৃশ্যমান (opacity 1) করবে */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* হালকা ছোট থেকে শুরু হবে */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* কাস্টম ক্লাস 1: 0.5 সেকেন্ড ডিলে হবে */
+.animate-circle-1 {
+  animation: fadeInScale 1s ease-out forwards;
+  animation-delay: 0.2s; /* প্রথম বৃত্তটি 0.2 সেকেন্ড পর শুরু হবে */
+}
+
+/* কাস্টম ক্লাস 2: 1.0 সেকেন্ড ডিলে হবে */
+.animate-circle-2 {
+  animation: fadeInScale 0.8s ease-out forwards;
+  animation-delay: 1.5s; /* দ্বিতীয় বৃত্তটি 0.8 সেকেন্ড পর শুরু হবে */
+}
+
+/* কাস্টম ক্লাস 3: 1.5 সেকেন্ড ডিলে হবে */
+.animate-circle-3 {
+  animation: fadeInScale 0.8s ease-out forwards;
+  animation-delay: 2s; /* তৃতীয় বৃত্তটি 1.4 সেকেন্ড পর শুরু হবে */
+}
+
+
+
+/* globals.css */
+
+/*
+  হোভার করার সময় ট্রানজিশন যোগ করা হচ্ছে।
+  এটি নিশ্চিত করে যে হোভার ইন (hover in) এবং হোভার আউট (hover out) দুটোই মসৃণ হবে।
+*/
+.team-image-wrapper {
+  /* হোভার করার সময় 'transform' এবং 'left' পরিবর্তন হবে 0.3 সেকেন্ডে */
+  transition: transform 0.3s ease-out, left 0.3s ease-out;
+}
+
+/*
+  মূল কন্টেইনারটির উপর হোভার হলে ভেতরের ইমেজগুলো সরানোর লজিক।
+  nth-child() ব্যবহার করে প্রতিটি ইমেজকে আলাদাভাবে সরানো হচ্ছে।
+*/
+.hover-spread-container:hover .team-image-wrapper:nth-child(1) {
+    /* 1st image: বাম দিকে সরাও */
+    transform: translateX(-15px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(2) {
+    /* 2nd image: হালকা বাম দিকে সরাও */
+    transform: translateX(-5px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(3) {
+    /* 3rd image: সামান্য সরাও */
+    transform: translateX(5px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(4) {
+    /* 4th image: হালকা ডান দিকে সরাও */
+    transform: translateX(15px);
+}
+.hover-spread-container:hover .team-image-wrapper:nth-child(5) {
+    /* 5th image: ডান দিকে সরাও */
+    transform: translateX(25px);
+}
+
+/*
+  যদি আপনার ৫টির বেশি ইমেজ থাকে, তবে বাকি ইমেজগুলোর জন্য এখানে nth-child()
+  ব্যবহার করে transform: translateX() যোগ করতে হবে।
+*/

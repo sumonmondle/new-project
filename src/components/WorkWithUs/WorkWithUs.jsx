@@ -163,6 +163,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function WorkWithUs() {
 
@@ -182,13 +183,12 @@ export default function WorkWithUs() {
       });
 
       if (res) {
-        alert("✅ Form submitted successfully!");
+        toast.success('✅ Form submitted successfully!')
         e.target.reset();
       } else {
-        alert("❌ Something went wrong!");
+        toast.error("❌ Something went wrong!")
       }
     } catch (error) {
-      console.error(error);
       alert("❌ Server error!");
     }
   };
@@ -203,7 +203,7 @@ export default function WorkWithUs() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
         >
-          why choose us
+          WORK WITH US
         </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -211,7 +211,7 @@ export default function WorkWithUs() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
         >
-          Know What
+         Let’s level up
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ export default function WorkWithUs() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="pt-2 text-3xl font-semibold text-white font-syne"
         >
-          We Do Differently
+          Your Business!
         </motion.p>
       </div>
 

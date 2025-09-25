@@ -151,11 +151,32 @@ export default function HeroSection() {
         {/* ===== Text Area (with background circles) ===== */}
         <div className="relative flex flex-col items-center justify-center">
           {/* Background Rounded Lines (only behind text) */}
-  <div className="absolute inset-0 flex items-center justify-center -z-10">
+          {/* <div className="absolute inset-0 flex items-center justify-center -z-10">
   <div className="absolute w-[600px] h-[600px] rounded-full border-l border-r border-white/20"></div>
   <div className="absolute w-[900px] h-[900px] rounded-full border-l border-r border-white/20"></div>
   <div className="absolute w-[1200px] h-[1200px] rounded-full border-l border-r border-white/20"></div>
-</div>
+</div> */}
+
+          <div className="absolute inset-0 flex items-center justify-center -z-10">
+
+
+            <div
+              className="absolute w-[600px] h-[600px] rounded-full border-l border-r border-white/20 
+               opacity-0 animate-circle-1">
+            </div>
+
+
+            <div
+              className="absolute w-[900px] h-[900px] rounded-full border-l border-r border-white/20 
+               opacity-0 animate-circle-2">
+            </div>
+
+
+            <div
+              className="absolute w-[1200px] h-[1200px] rounded-full border-l border-r border-white/20 
+               opacity-0 animate-circle-3">
+            </div>
+          </div>
 
 
           {/* Header Text */}
@@ -190,48 +211,56 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Team Images */}
-          <div className="flex flex-col items-center justify-center pb-10 md:flex-row">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-[170px] h-20 flex items-center"
-            >
-              {teamImages.map((src, i) => (
-                <div
-                  key={i}
-                  className="absolute overflow-hidden border-2 border-white rounded-full shadow-lg"
-                  style={{
-                    left: `${i * 28}px`,
-                    zIndex: teamImages.length - i,
-                  }}
-                >
-                  <Image
-                    src={src}
-                    alt="Client Photo"
-                    width={64}
-                    height={64}
-                    className="object-cover rounded-full w-11 h-11"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className=""
-            >
-              <div className="max-w-xl text-left text-white/90">
-                <p className="text-sm">Loved by 500+ Businesses worldwide.</p>
-                <p className="mt-1 text-sm text-[#8b8e97]">
-                  Our Clients Speak for Us
-                </p>
-              </div>
-            </motion.div>
+       <div className="flex flex-col items-center justify-center pb-10 cursor-pointer md:flex-row">
+      
+      {/* প্রথম motion.div: টিম ইমেজগুলো ধারণ করে
+        এখানে hover-spread-container ক্লাসটি যোগ করা হয়েছে
+      */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="relative w-[170px] h-20 flex items-center hover-spread-container"
+      >
+        {teamImages.map((src, i) => (
+          <div
+            key={i}
+            // team-image-wrapper ক্লাসটি এখানে যোগ করা হয়েছে
+            className="absolute overflow-hidden border-2 border-white rounded-full shadow-lg team-image-wrapper"
+            style={{
+              left: `${i * 28}px`,
+              zIndex: teamImages.length - i,
+            }}
+          >
+            <Image
+              src={src}
+              alt="Client Photo"
+              width={64}
+              height={64}
+              className="object-cover rounded-full w-11 h-11"
+              loading="lazy"
+            />
           </div>
+        ))}
+      </motion.div>
+
+      {/* দ্বিতীয় motion.div: টেক্সট কন্টেন্ট
+        আপনার whileInView অ্যানিমেশনটি স্ক্রল করার সময় এটিও মসৃণভাবে দেখাবে
+      */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className=""
+      >
+        <div className="max-w-xl text-left text-white/90">
+          <p className="text-sm">Loved by 500+ Businesses worldwide.</p>
+          <p className="mt-1 text-sm text-[#8b8e97]">
+            Our Clients Speak for Us
+          </p>
+        </div>
+      </motion.div>
+    </div>
 
           {/* Button */}
           <motion.div

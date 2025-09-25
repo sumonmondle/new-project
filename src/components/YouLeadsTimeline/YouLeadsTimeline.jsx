@@ -48,10 +48,10 @@ function YouLeadsTimeline() {
   };
 
   // Tag animations: Upward tags move outward
-  const tag1X = useTransform(step1Scroll, [0, 0.5,1], ["10%","0%" ,"10%"]);
-  const tag1Y = useTransform(step1Scroll, [0,0.5, 1], ["10%","0%" ,"10%"]);
-  const tag2X = useTransform(step1Scroll, [0,0.5, 1], ["-10%", "0%","-10%"]);
-  const tag2Y = useTransform(step1Scroll, [0, 0.5,1], ["10%", "0%","10%"]);
+  const tag1X = useTransform(step1Scroll, [0, 0.5, 1], ["10%", "0%", "10%"]);
+  const tag1Y = useTransform(step1Scroll, [0, 0.5, 1], ["10%", "0%", "10%"]);
+  const tag2X = useTransform(step1Scroll, [0, 0.5, 1], ["-10%", "0%", "-10%"]);
+  const tag2Y = useTransform(step1Scroll, [0, 0.5, 1], ["10%", "0%", "10%"]);
 
   // Step 2
   const tag3X = useTransform(step2Scroll, [0, 0.5, 1], ["40%", "45%", "40%"]);
@@ -113,6 +113,32 @@ function YouLeadsTimeline() {
 
   return (
     <>
+       <div className="relative z-10 max-w-3xl pb-20 mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
+            >
+              OUR PROCESS
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
+            >
+              Our Strategy To Get
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="pt-2 text-3xl font-semibold text-white font-syne"
+            >
+              You Leads With Content
+            </motion.p>
+          </div>
 
       <div className="relative w-full max-w-5xl mx-auto ">
         {/* Timeline Line */}
@@ -138,10 +164,10 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Ideas into strategy</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              We take your ideas and analyze them thoroughly based on our experience and existing market standards.
+              We take your concepts and align them with market trends and audience needs.
             </p>
           </div>
           <div
@@ -161,7 +187,8 @@ function YouLeadsTimeline() {
               style={{ x: tag1X, y: tag1Y, rotate: 332 }}
             />
             <motion.img
-              src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a7b71a60f057a75d5a_tag%203.avif"
+              src="https://i.postimg.cc/vTWfyH03/Gemini-Generated-Image-8d0bef8d0bef8d0b.png"
+              // src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a7b71a60f057a75d5a_tag%203.avif"
               alt="Tag 2"
               className="md:w-[140px] w-24  absolute lg:right-32 right-56 top-24 z-10 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
               style={{ x: tag2X, y: tag2Y, rotate: 21 }}
@@ -242,9 +269,9 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Proven frameworks</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
-                We take your ideas and analyze them thoroughly based on our experience and existing market standards.
+                Scripts and structures trusted by leading brands in real estate, finance, and commercial industries.
               </p>
             </div>
           </div>
@@ -268,10 +295,10 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Professional video content</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              We take your ideas and analyze them thoroughly based on our experience and existing market standards.
+              Polished editing and branded visuals that make your message clear and persuasive.
             </p>
           </div>
           <div
@@ -368,9 +395,9 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">High-converting thumbnails</h3>
               <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4">
-                We take your ideas and analyze them thoroughly based on our experience and existing market standards.
+                Designed to capture attention and drive results in your niche.
               </p>
             </div>
           </div>
@@ -429,10 +456,10 @@ function YouLeadsTimeline() {
               <div className="uppercase bg-[#3636ff] hidden lg:block rounded-[8.8px] px-[13px] py-[8px] text-[14.235px] leading-[1.55] text-white shadow-[0_4.433px_8.865px_rgba(0,0,0,0.12)]">
                 Ideation
               </div>
-              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">Idea Analysis</h3>
+              <h3 className="text-[20px] lg:text-[22px] font-semibold leading-[1.3] tracking-[-1.12px] capitalize m-0">From content to clients</h3>
             </div>
             <p className="text-[#ffffff8a] max-w-[238px] font-normal leading-[1.47] mt-4 mx-auto lg:mx-0">
-              We take your ideas and analyze them thoroughly based on our experience and existing market standards.
+              Post your video and start generating leads that grow your business.
             </p>
           </div>
         </div>

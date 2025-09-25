@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function DoDifferently() {
   return (
-    <div className="relative px-4 pt-6 pb-0 overflow-hidden text-white bg-black md:pb-32 md:pt-24 sm:px-6 lg:px-8">
+    <div className="relative px-4 pt-6 pb-0 overflow-hidden text-white bg-black md:pb-12 md:pt-24 sm:px-6 lg:px-8">
       {/* Glowing Background Overlay */}
       <div className="absolute z-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <div className="bg-white/10 w-[700px] h-[700px] rounded-full blur-[100px] opacity-80 mix-blend-overlay"></div>
@@ -85,12 +85,11 @@ function DoDifferently() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="">
               <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans ">
                 {[
-                  "In house team of 40+ Experts",
-                  "Results oriented",
-                  "Experience with 500+ Clients",
-                  "Proven DFY Content Funnel",
-                  "Personalised CRM",
-                  "24/7 Support, Anytime You Need Us",
+                  "In-House Team of 10+ Video & Social Experts",
+                  "Results-Driven Content Strategy",
+                  "Trusted by 150+ Clients Globally",
+                  "Done-For-You Video & Social Media Packages",
+                  "24/7 Support Whenever You Need",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm sm:text-base">
                     <Image
@@ -111,7 +110,7 @@ function DoDifferently() {
                 <h4 className="mb-4 text-base font-semibold">Bonuses you get with us:</h4>
 
                 <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans">
-                  {["Free Go High Level Subscription", "Free 1-on-1 Consultancy"].map((bonus, idx) => (
+                  {["Free Social Media Audit & Strategy Session", "Free 1-on-1 Video Editing Consultation"].map((bonus, idx) => (
                     <li key={idx} className="flex items-center gap-[13px] opacity-100 [transform-style:preserve-3d]">
                       <Image
                         src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/679f916c5fe0a2a75fbc4d47_Check%20Icon.svg"
@@ -140,14 +139,14 @@ function DoDifferently() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="">
               <ul className="flex flex-col gap-y-[21px] pt-[7px] pb-[6px] text-[16px] font-sans text-[#ffffff8f]">
                 {[
-                  "Unreliable Freelancers with slow turnarounds",
-                  "Edits that fail to convert or perform.",
-                  "Weak thumbnails and titles with no CTR strategy.",
-                  "Lack of proper distribution systems",
-                  "No expertise in funnels or lead capture systems.",
-                  "Limited revisions with no client-focused approach.",
-                  "Guesswork instead of data-driven decisions.",
-                  "Delayed responses and poor communication.",
+                  "Freelancers Who Miss Deadlines and Deliver Late",
+                  "Edits That Fail to Engage or Convert",
+                  "Weak Thumbnails and Titles That Kill CTR",
+                  "No System for Proper Video Distribution",
+                  "No Expertise in Funnels or Lead Capture",
+                  " Limited Revisions, No Client-Focused Approach",
+                  "Decisions Made on Guesswork, Not Data",
+                  "Slow Responses and Poor Communication",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-[21px]">
                     <Image

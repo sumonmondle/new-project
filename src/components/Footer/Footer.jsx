@@ -134,7 +134,7 @@ function Footer() {
       <div className="relative z-10">
         <Container>
           {/* Main Footer */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-0 mb-[60px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-0 mb-[60px] py-24">
             {/* Left: Logo Section */}
             <Link
               href="/"
