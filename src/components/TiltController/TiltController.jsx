@@ -41,7 +41,7 @@
 //         glareColor="#ffffff"
 //         glarePosition="all"
 //         transition={true}
-//         className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex flex-col items-center justify-center rounded-xl shadow-lg"
+//         className="flex flex-col items-center justify-center w-full h-full text-white shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl"
 //       >
 //         {children}
 //       </Tilt>
@@ -54,7 +54,7 @@
 import { useState, useEffect, useRef } from "react";
 import Tilt from "react-parallax-tilt";
 
-export default function TiltController({ children }) {
+export default function TiltController({ children ,customClass = ""}) {
   const [manualTilt, setManualTilt] = useState([10, 0]);
   const currentTilt = useRef([10, 0]);
   const targetTilt = useRef([10, 0]);
@@ -122,7 +122,8 @@ export default function TiltController({ children }) {
         glareColor="#ffffff"
         glarePosition="all"
         transition={true}
-        className="transition-transform duration-500 ease-out w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex flex-col items-center justify-center rounded-xl shadow-lg"
+        className={`${customClass}`}
+        // className="flex flex-col items-center justify-center w-full h-full text-white transition-transform duration-500 ease-out shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl"
       >
         {children}
       </Tilt>
