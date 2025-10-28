@@ -118,9 +118,9 @@ function YouLeadsTimeline() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
+              className="text-sm font-semibold tracking-widest text-gray-300 font-syne"
             >
-              OUR PROCESS
+              Our process
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -128,7 +128,7 @@ function YouLeadsTimeline() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
             >
-              Our Strategy To Get
+              Our strategy to grow 
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -136,7 +136,7 @@ function YouLeadsTimeline() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="pt-2 text-3xl font-semibold text-white font-syne"
             >
-              You Leads With Content
+              your brand with content
             </motion.p>
           </div>
 

@@ -172,7 +172,7 @@ function DoDifferently() {
             className="inline-flex items-center gap-2 bg-[#4355e4] hover:bg-[#273fb7] text-white font-semibold px-[25px] py-[14px] rounded-lg transition duration-300 hover:opacity-90
            hover:[box-shadow:inset_0_0_0_2px_rgba(255,255,255,0.08),inset_0_0_10px_rgba(255,255,255,0.06)] "
           >
-            <div>Book a 30-min call</div>
+            <div>Get in touch</div>
             <img
               loading="lazy"
               src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67970745c860818130bc7fd6_Arrow_Up_Right.svg"

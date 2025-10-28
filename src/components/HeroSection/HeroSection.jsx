@@ -282,7 +282,7 @@ export default function HeroSection() {
                 VideoURL={videoToRender?.src}
               />
             </TiltController>
-          </motion.div> :     <TiltController customClass="">  <div className="">
+          </motion.div> :     <TiltController customClass="">  <div className="mt-20">
             <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
 
               <video

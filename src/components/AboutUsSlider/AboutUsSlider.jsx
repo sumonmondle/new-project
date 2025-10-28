@@ -50,9 +50,90 @@ import useAboutUs from "@/hook/useAboutUs";
 // ];
 
 export default function AboutUsSlider() {
-  const { isPending, error, aboutUs, refetch } = useAboutUs();
-  const slides = aboutUs || [];
+  // const { isPending, error, aboutUs, refetch } = useAboutUs();
   // console.log(aboutUs)
+  // const slides = aboutUs || [];
+  // // console.log(aboutUs)
+
+
+  const { isPending, error, aboutUs, refetch } = useAboutUs();
+  console.log("Fetched Data:", aboutUs);
+
+  // 🧩 Default fallback data
+  const defaultSlides = [
+    {
+      _id: "default-1",
+      caption:
+        "Lumenza is my go-to editing partner—reliable, creative, and always on point.",
+      user: {
+        name: "Default User",
+        profaction: "Content Creator",
+        avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
+      },
+      videoThumbnail: "https://img.youtube.com/vi/i4PnFF4VXMU/mqdefault.jpg",
+      videoURL: "https://youtube.com/shorts/i4PnFF4VXMU?si=Dtg2VWpDZGNXK0ZE",
+    },
+    {
+      _id: "default-2",
+      caption:
+        "They seriously level up my content. Couldn’t imagine my workflow without them.",
+      user: {
+        name: "Default User",
+        profaction: "YouTuber",
+        avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
+      },
+      videoThumbnail: "https://img.youtube.com/vi/-abmTPr2FFk/mqdefault.jpg",
+      videoURL: "https://youtube.com/shorts/-abmTPr2FFk?si=C6rfp897Qa9zrPSc",
+    },
+    {
+      _id: "default-3",
+      caption:
+        "Super fast turnaround, and the quality stays top-notch every single time.",
+      user: {
+        name: "Default User",
+        profaction: "Filmmaker",
+        avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
+      },
+      videoThumbnail: "https://img.youtube.com/vi/i4PnFF4VXMU/mqdefault.jpg",
+      videoURL: "https://youtube.com/shorts/i4PnFF4VXMU?si=Dtg2VWpDZGNXK0ZE",
+    },
+    {
+      _id: "default-4",
+      caption:
+        "I love how easy they are to work with—stress-free edits always.",
+      user: {
+        name: "Default User",
+        profaction: "Filmmaker",
+        avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
+      },
+            videoThumbnail: "https://img.youtube.com/vi/-abmTPr2FFk/mqdefault.jpg",
+      videoURL: "https://youtube.com/shorts/-abmTPr2FFk?si=C6rfp897Qa9zrPSc",
+    },
+    {
+      _id: "default-5",
+      caption:
+        "Lumenza helped me grow my channel with edits that actually perform.",
+      user: {
+        name: "Default User",
+        profaction: "Filmmaker",
+        avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
+      },
+      videoThumbnail: "https://img.youtube.com/vi/i4PnFF4VXMU/mqdefault.jpg",
+      videoURL: "https://youtube.com/shorts/i4PnFF4VXMU?si=Dtg2VWpDZGNXK0ZE",
+    },
+  ];
+
+  // 🧠 Fallback logic (safe access)
+const slides =
+  Array.isArray(aboutUs) && aboutUs.length > 0
+    ? aboutUs
+    : defaultSlides;
+
+
+
+ 
+
+
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);

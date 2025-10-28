@@ -165,7 +165,6 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-
 export default function WorkWithUs() {
 
 
@@ -191,7 +190,7 @@ export default function WorkWithUs() {
         });
         e.target.reset();
       } else {
-        toast.error("")
+
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -199,7 +198,11 @@ export default function WorkWithUs() {
         });
       }
     } catch (error) {
-      alert("❌ Server error!");
+       Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Fill all input field",
+        });
     }
   };
 
@@ -263,14 +266,12 @@ export default function WorkWithUs() {
               />
 
               <h4 className="text-lg font-semibold leading-tight md:text-xl">
-                Meet Mahmudul,{" "}
+                Meet Sumon,{" "}
                 <span className="text-[#7EE0FF]">Brain Behind</span>
               </h4>
 
               <p className="text-sm leading-relaxed text-gray-200 md:text-base">
-                Let’s discuss your unique design challenges. Schedule your
-                complimentary consultation today and let’s find the best solutions
-                together.
+                Enhance your brand with polished, high-impact video editing. Schedule your complimentary consultation today to craft visuals that captivate and convert.
               </p>
 
               <div>
