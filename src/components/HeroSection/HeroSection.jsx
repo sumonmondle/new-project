@@ -159,117 +159,117 @@ export default function HeroSection() {
 
   return (
 
-       <section className="relative flex flex-col items-center justify-start w-full min-h-screen px-4 overflow-hidden bg-black pt-28 pb-14 md:pt-40">
-        <div className="max-w-7xl mx-auto w-full text-center text-[#a8aeb6] relative z-10">
-          {/* ===== Text Area (with background circles) ===== */}
-          <div className="relative flex flex-col items-center justify-center">
-            <div className="absolute inset-0 flex items-center justify-center -z-10">
-              <div
-                className="absolute lg:w-[850px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20 
+    <section className="relative flex flex-col items-center justify-start w-full min-h-screen px-4 overflow-hidden bg-black pt-28 pb-14 md:pt-40">
+      <div className="max-w-7xl mx-auto w-full text-center text-[#a8aeb6] relative z-10">
+        {/* ===== Text Area (with background circles) ===== */}
+        <div className="relative flex flex-col items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center -z-10">
+            <div
+              className="absolute lg:w-[850px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20 
                opacity-0 animate-circle-1">
-              </div>
-              <div
-                className="absolute lg:w-[1080px] lg:h-[1080px] w-[600px] h-[600px] rounded-full border-l border-r border-white/20 
-               opacity-0 animate-circle-2">
-              </div>
-              <div
-                className="absolute lg:w-[1300px] lg:h-[1300px] w-[800px] h-[800px] rounded-full border-l border-r border-white/20 
-               opacity-0 animate-circle-3">
-              </div>
             </div>
-            {/* Header Text */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto mb-1 text-center"
-            >
-              <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-6xl ">
-                Create a Portfolio That Lands You More Video Editing Clients
-              </h1>
-            </motion.div>
-
-            {/* Subtitle */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="max-w-2xl mx-auto text-center"
-            >
-              <p className="mt-4 text-lg text-gray-600">
-                Launch a client-winning editing portfolio website in &lt; 5 minutes
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="max-w-2xl mx-auto text-center"
-            >
-              <div
-                className="relative flex justify-center h-20 mt-6 cursor-pointer w-72"
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-              >
-                {clientImages.map((src, index) => {
-                  const hoverOffset = hovered
-                    ? (index - (clientImages.length - 1) / 2) * 10
-                    : 0;
-                  const zIndex = clientImages.length - index; // top image above
-                  const initialOffset = index * 40; // slight initial X offset for visibility
-                  return (
-                    <motion.img
-                      key={index}
-                      src={src}
-                      alt={`Client ${index + 1}`}
-                      className="absolute object-cover w-16 h-16 border-2 border-white rounded-full shadow-md"
-                      style={{
-                        left: `calc(35% + ${initialOffset}px)`,
-                        zIndex,
-                      }}
-                      animate={{
-                        left: hovered
-                          ? `calc(17% + ${initialOffset + hoverOffset}px)`
-                          : `calc(17% + ${initialOffset}px)`,
-                      }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    />
-                  );
-                })}
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="max-w-2xl mx-auto text-center"
-            >
-              <p className="mt-2 text-sm text-gray-500">
-                Used by 10,000+ editors worldwide.
-              </p>
-            </motion.div>
-            {/* Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="mt-6">
-                <Link href="#book-a-call"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gray-900 rounded-lg shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
-                    className="w-5 h-5 fill-white">
-                    <path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path>
-                  </svg>
-                  Sign in with Google
-                </Link>
-              </div>
-            </motion.div>
+            <div
+              className="absolute lg:w-[1080px] lg:h-[1080px] w-[600px] h-[600px] rounded-full border-l border-r border-white/20 
+               opacity-0 animate-circle-2">
+            </div>
+            <div
+              className="absolute lg:w-[1300px] lg:h-[1300px] w-[800px] h-[800px] rounded-full border-l border-r border-white/20 
+               opacity-0 animate-circle-3">
+            </div>
           </div>
+          {/* Header Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto mb-1 text-center"
+          >
+            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-6xl ">
+              Create a Portfolio That Lands You More Video Editing Clients
+            </h1>
+          </motion.div>
+
+          {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <p className="mt-4 text-lg text-gray-600">
+              Launch a client-winning editing portfolio website in &lt; 5 minutes
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <div
+              className="relative flex justify-center h-20 mt-6 cursor-pointer w-72"
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+            >
+              {clientImages.map((src, index) => {
+                const hoverOffset = hovered
+                  ? (index - (clientImages.length - 1) / 2) * 10
+                  : 0;
+                const zIndex = clientImages.length - index; // top image above
+                const initialOffset = index * 40; // slight initial X offset for visibility
+                return (
+                  <motion.img
+                    key={index}
+                    src={src}
+                    alt={`Client ${index + 1}`}
+                    className="absolute object-cover w-16 h-16 border-2 border-white rounded-full shadow-md"
+                    style={{
+                      left: `calc(35% + ${initialOffset}px)`,
+                      zIndex,
+                    }}
+                    animate={{
+                      left: hovered
+                        ? `calc(17% + ${initialOffset + hoverOffset}px)`
+                        : `calc(17% + ${initialOffset}px)`,
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  />
+                );
+              })}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <p className="mt-2 text-sm text-gray-500">
+              Used by 10,000+ editors worldwide.
+            </p>
+          </motion.div>
+          {/* Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="mt-6">
+              <Link href="#book-a-call"
+                className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gray-900 rounded-lg shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
+                  className="w-5 h-5 fill-white">
+                  <path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"></path>
+                </svg>
+                Sign in with Google
+              </Link>
+            </div>
+          </motion.div>
+        </div>
 
 
-          {
-            headerVideo ?      <motion.div
+        {
+          headerVideo ? <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -277,12 +277,14 @@ export default function HeroSection() {
           >
             <TiltController customClass="flex flex-col items-center justify-center w-full h-full text-white transition-transform duration-500 ease-out shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
               <VideoThumbnail
-                thamnailURL={videoToRender?.thumbnail}
-                // VideoURL={"https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"}
-                VideoURL={videoToRender?.src}
+                // thamnailURL={videoToRender?.thumbnail}
+                // // VideoURL={"https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"}
+                // VideoURL={videoToRender?.src}
+                thamnailURL={headerVideo?.thumbnail}
+                VideoURL={headerVideo?.src} // Use headerVideo directly here
               />
             </TiltController>
-          </motion.div> :     <TiltController customClass="">  <div className="mt-20">
+          </motion.div> : <TiltController customClass="">  <div className="mt-20">
             <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
 
               <video
@@ -297,11 +299,11 @@ export default function HeroSection() {
               </video>
 
             </div>
-          </div></TiltController>  
-          }
+          </div></TiltController>
+        }
 
-        </div>
-      </section>
+      </div>
+    </section>
 
 
 

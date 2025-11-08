@@ -33,7 +33,7 @@ function page() {
       </AnimatedSection>
       <AnimatedSection id="case-study">
         {" "}
-        <CaseStudies></CaseStudies>{" "}
+        {/* <CaseStudies></CaseStudies>{" "} */}
       </AnimatedSection>
       <DoDifferently></DoDifferently>
       {/* <YouLeadsTimeline></YouLeadsTimeline> */}
