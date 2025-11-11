@@ -179,3 +179,54 @@ body {
   যদি আপনার ৫টির বেশি ইমেজ থাকে, তবে বাকি ইমেজগুলোর জন্য এখানে nth-child()
   ব্যবহার করে transform: translateX() যোগ করতে হবে।
 */
+
+
+
+/* --- CSS for Tilt and Framer Box --- */
+
+/* 1. Tilt container styles (mimics element.style) */
+.tilt-container {
+    /* If your TiltController component manages this dynamically, you can remove this block. */
+    will-change: transform;
+    opacity: 1;
+    transform: perspective(1200px) scale(0.950832) rotateX(6.14603deg);
+}
+
+
+
+/* 3. The Framer Box Styles (framer-1s5k0cy) */
+.framer-1s5k0cy {
+    /* Border Variables */
+    --border-bottom-width: 1px;
+    --border-color: #27272a;
+    --border-left-width: 1px;
+    --border-right-width: 1px;
+    --border-style: solid;
+    --border-top-width: 1px;
+
+    /* Apply Borders */
+    border-color: var(--border-color);
+    border-style: var(--border-style);
+    border-width: var(--border-top-width) var(--border-right-width) var(--border-bottom-width) var(--border-left-width);
+    
+    /* Layout and Appearance */
+    background-color: #09090b;
+    /* height: 476px; */
+    border-radius: 15px;
+    padding: 20px; 
+    
+    /* Flex and Positioning */
+    display: flex;
+    flex-flow: column;
+    place-content: center; 
+    align-items: center;
+    gap: 0;
+    position: relative;
+    overflow: hidden; /* Important for the mask effect */
+
+    /* 3D and Performance */
+    transform-style: preserve-3d;
+    will-change: var(--framer-will-change-override, transform);
+    z-index: 1;
+
+}

@@ -181,7 +181,7 @@ function Footer() {
           {/* Bottom Made-by Section */}
           <div className="flex flex-col items-center justify-between gap-6 pb-10 md:flex-row">
             <div className="text-[12.5px] text-[#A0A0A0] font-normal leading-[1.5em]">
-              © 2025 mzmedia | all rights reserved by mzmedia
+              © 2025 lumenza | all rights reserved by lumenza
             </div>
 
             {/* Social Media Links */}

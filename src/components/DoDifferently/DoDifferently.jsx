@@ -68,8 +68,8 @@ function DoDifferently() {
                 <Image
                   src="/image/Logo png.png"
                   alt="Company Logo"
-                  width={80}
-                  height={40}
+                  width={1000}
+                  height={1000}
                   className="h-16 w-60"
                 />
                 <Image

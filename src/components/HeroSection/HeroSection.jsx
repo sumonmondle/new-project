@@ -162,18 +162,18 @@ export default function HeroSection() {
     <section className="relative flex flex-col items-center justify-start w-full min-h-screen px-4 overflow-hidden bg-black pt-28 pb-14 md:pt-40">
       <div className="max-w-7xl mx-auto w-full text-center text-[#a8aeb6] relative z-10">
         {/* ===== Text Area (with background circles) ===== */}
-        <div className="relative flex flex-col items-center justify-center">
+        <div className="relative flex flex-col items-center justify-center mt-5 md:mt-44">
           <div className="absolute inset-0 flex items-center justify-center -z-10">
             <div
               className="absolute lg:w-[850px] lg:h-[850px] w-[400px] h-[400px] rounded-full border-l border-r border-white/20 
                opacity-0 animate-circle-1">
             </div>
             <div
-              className="absolute lg:w-[1080px] lg:h-[1080px] w-[600px] h-[600px] rounded-full border-l border-r border-white/20 
+              className="absolute lg:w-[1125px] lg:h-[1125px] w-[600px] h-[600px] rounded-full border-l border-r border-white/20 
                opacity-0 animate-circle-2">
             </div>
             <div
-              className="absolute lg:w-[1300px] lg:h-[1300px] w-[800px] h-[800px] rounded-full border-l border-r border-white/20 
+              className="absolute lg:w-[1400px] lg:h-[1400px] w-[800px] h-[800px] rounded-full border-l border-r border-white/20 
                opacity-0 animate-circle-3">
             </div>
           </div>
@@ -182,10 +182,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-2xl mx-auto mb-1 text-center"
+            className="max-w-3xl mx-auto mb-1 text-center"
           >
-            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-6xl ">
-              Create a Portfolio That Lands You More Video Editing Clients
+            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[2.95rem] leading-tight ">
+              Transform Your Business Fast with High-Quality Engaging Video Content
             </h1>
           </motion.div>
 
@@ -197,7 +197,7 @@ export default function HeroSection() {
             className="max-w-2xl mx-auto text-center"
           >
             <p className="mt-4 text-lg text-gray-600">
-              Launch a client-winning editing portfolio website in &lt; 5 minutes
+              Transform Your Business. Transform Your Audience.
             </p>
           </motion.div>
           <motion.div
@@ -249,7 +249,7 @@ export default function HeroSection() {
             </p>
           </motion.div>
           {/* Button */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -264,7 +264,7 @@ export default function HeroSection() {
                 Sign in with Google
               </Link>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
 
@@ -273,7 +273,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-4xl mx-auto mt-20"
+            className="max-w-4xl mx-auto mt-24"
           >
             <TiltController customClass="flex flex-col items-center justify-center w-full h-full text-white transition-transform duration-500 ease-out shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
               <VideoThumbnail
@@ -284,22 +284,56 @@ export default function HeroSection() {
                 VideoURL={headerVideo?.src} // Use headerVideo directly here
               />
             </TiltController>
-          </motion.div> : <TiltController customClass="">  <div className="mt-20">
-            <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
+          </motion.div> :
+          //  <TiltController customClass="">  <div className="mt-20">
+          //   <div className="relative w-full max-w-4xl mx-auto overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105 ">
 
-              <video
-                src="https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="object-contain w-full h-auto shadow-2xl rounded-2xl bg-black/5"
-              >
-                Your browser does not support the video tag.
-              </video>
+          //     <video
+          //       src="https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"
+          //       autoPlay
+          //       muted
+          //       loop
+          //       playsInline
+          //       className="object-contain w-full h-auto shadow-2xl rounded-2xl bg-black/5"
+          //     >
+          //       Your browser does not support the video tag.
+          //     </video>
 
+          //   </div>
+          // </div></TiltController>
+
+          <TiltController customClass="">
+        
+        <div className="mt-24">
+            {/* 2. This is the "box" container. We apply the Framer box styles (.framer-1s5k0cy) here.
+               The Tailwind classes are removed/adjusted here as .framer-1s5k0cy defines width/height/padding. 
+               We retain 'relative w-full max-w-4xl mx-auto' for centering and max-width.
+            */}
+            <div className="relative w-full max-w-4xl mx-auto framer-1s5k0cy">
+                
+                {/* 3. This inner div previously had the scale/cursor effects. 
+                   We need an inner container to properly hold the video within the 40px padding 
+                   defined by .framer-1s5k0cy's box.
+                   We re-apply the hover effects to the video's wrapper. 
+                */}
+                <div className="relative w-full h-full overflow-hidden transition duration-500 transform rounded-lg cursor-pointer hover:scale-105">
+                    
+                    <video
+                        src="https://malloy-files-c0ddahgefecthmcs.z03.azurefd.net/web/framer_videos/Portfolio%20Showcase%202200x1000%20v2.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        // Video element inside the box
+                        className="object-contain w-full h-full shadow-2xl rounded-2xl bg-black/5"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
-          </div></TiltController>
+        </div>
+    </TiltController>
+
         }
 
       </div>

@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <header className="sticky z-50 flex justify-center w-full px-4 top-4">
       <div
-        className="absolute max-w-[944px] w-full flex items-center justify-between px-4 py-3 md:py-4 
+        className="absolute max-w-[1200px] w-full flex items-center justify-between px-4 py-3 md:py-4 md:px-5
                       bg-gradient-to-b from-[#1819294d] to-black/90 
                       backdrop-blur-md border border-white/10 rounded-lg"
       >
@@ -41,7 +41,7 @@ export default function Navbar() {
             href="#book-a-call"
             className="bg-[#273fb7] p-[14px] rounded-lg font-semibold  transition text-sm text-white hover:opacity-85 hover:[box-shadow:inset_0_0_0_5px_#0003]"
           >
-            Book a call
+            Get in touch
           </Link>
         </div>
 

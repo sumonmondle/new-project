@@ -327,7 +327,7 @@ export default function WorkWithUs() {
                 <fieldset>
                   <legend className="mb-3 text-sm text-gray-300">Select Service</legend>
                   <div className="flex flex-wrap gap-6 md:gap-3">
-                    {["Branding", "Mobile App", "Website", "Web App"].map((s) => (
+                    {["Saas", "Short", "Youtube", "Web App"].map((s) => (
                       <div key={s}>
                         <input
                           type="radio"
@@ -355,10 +355,10 @@ export default function WorkWithUs() {
                   <legend className="mb-3 text-sm text-gray-300">Estimated Budget</legend>
                   <div className="flex flex-wrap gap-6 md:gap-3">
                     {[
-                      "Less than $1k",
+                      "Less than $500",
+                      "$500 - $1k",
                       "$1k - $5k",
-                      "$5k - $10k",
-                      "More than $10k",
+                      "More than $5k",
                     ].map((b) => (
                       <div key={b}>
                         <input
