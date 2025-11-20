@@ -158,56 +158,344 @@
 
 
 
-"use client"
-import React from "react";
-import { motion } from "framer-motion";
+// "use client"
+// import React from "react";
+// import { motion } from "framer-motion";
 
-import axios from "axios";
-import Swal from "sweetalert2";
+// import axios from "axios";
+// import Swal from "sweetalert2";
+
+// export default function WorkWithUs() {
+
+
+//   // form submit handler with axios
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     const formData = new FormData(e.target);
+//     const data = Object.fromEntries(formData.entries());
+// console.log(data)
+//     try {
+//       const res = await axios.post("https://backend-wine-chi-49.vercel.app/contact", data, {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+
+//       if (res) {
+//         Swal.fire({
+//           title: "Good job!",
+//           text: "✅ Form submitted successfully!",
+//           icon: "success"
+//         });
+//         e.target.reset();
+//       } else {
+
+//         Swal.fire({
+//           icon: "error",
+//           title: "Oops...",
+//           text: "❌ Something went wrong!",
+//         });
+//       }
+//     } catch (error) {
+//        Swal.fire({
+//           icon: "error",
+//           title: "Oops...",
+//           text: "Fill all input field",
+//         });
+//     }
+//   };
+
+//   return (
+//     <div className="pt-10 pb-0 ">
+//       {/* Heading Section */}
+//       <div className="relative z-10 max-w-3xl pb-16 mx-auto text-center">
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.7, delay: 0.1 }}
+//           className="text-sm font-semibold tracking-widest text-gray-300 uppercase font-syne"
+//         >
+//           WORK WITH US
+//         </motion.div>
+//         <motion.h2
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.7, delay: 0.2 }}
+//           className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
+//         >
+//           Let’s level up
+//         </motion.h2>
+//         <motion.p
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.7, delay: 0.3 }}
+//           className="pt-2 text-3xl font-semibold text-white font-syne"
+//         >
+//           Your Business!
+//         </motion.p>
+//       </div>
+
+//       <section
+//         className="relative z-10 w-full bg-left-bottom bg-no-repeat bg-contain "
+//         style={{
+//           backgroundImage:
+//             "url('https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b5dd36b3452df31baf9345_Glow.avif')",
+//         }}
+//       >
+//         {/* Glass overlay */}
+//         <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-xl"></div>
+
+//         <div className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+//           {/* Left column */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 50 }}   // ✅ x থেকে y করা হলো
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8, delay: 0.2 }}
+//             className="flex flex-col gap-6 md:col-span-1"
+//           >
+//             <div
+//               className="rounded-[31px] p-8 md:p-10 flex flex-col gap-6 text-white"
+//               style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+//             >
+//               <img
+//                 src="https://panze.co/wp-content/uploads/2024/09/Frame.svg"
+//                 alt="Contact Form of Panze UX Design Studio"
+//                 className="w-full h-auto"
+//                 loading="lazy"
+//               />
+
+//               <h4 className="text-lg font-semibold leading-tight md:text-xl">
+//                 Meet Sumon,{" "}
+//                 <span className="text-[#7EE0FF]">Brain Behind</span>
+//               </h4>
+
+//               <p className="text-sm leading-relaxed text-gray-200 md:text-base">
+//                 Enhance your brand with polished, high-impact video editing. Schedule your complimentary consultation today to craft visuals that captivate and convert.
+//               </p>
+
+//               <div>
+//                 <a
+//                   href="https://tidycal.com/panze/meeting"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="relative inline-block px-6 py-3 text-sm font-medium text-white rounded-full transition-all duration-400 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7EE0FF]"
+//                   style={{
+//                     backgroundImage: "linear-gradient(80deg, #B03BFF, #408BFF)",
+//                   }}
+//                 >
+//                   <span className="relative z-10">Schedule a Virtual Coffee</span>
+//                   <span className="absolute inset-[2px] rounded-full bg-[#050A26]"></span>
+//                 </a>
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Right column */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 50 }}   // ✅ x থেকে y করা হলো
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8, delay: 0.3 }}
+//             className="md:col-span-2"
+//           >
+//             <div
+//               className="w-full p-6 rounded-2xl md:p-10"
+//               style={{
+//                 background:
+//                   "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
+//               }}
+//             >
+//               <form className="space-y-6" aria-label="Contact form" onSubmit={handleSubmit}>
+//                 {/* Name + Email */}
+//                 <div className="flex flex-col gap-4 md:flex-row">
+//                   <input
+//                     name="client_name"
+//                     type="text"
+//                     placeholder="Type your name"
+//                     className="flex-1 px-8 py-4 rounded-full bg-[#050A26] text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#7EE0FF] transition-all"
+//                   />
+//                   <input
+//                     name="client_email"
+//                     type="email"
+//                     placeholder="Type contact email"
+//                     required
+//                     className="flex-1 px-8 py-4 rounded-full bg-[#050A26] text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#7EE0FF] transition-all"
+//                   />
+//                 </div>
+
+//                 {/* Service options */}
+//                 <fieldset>
+//                   <legend className="mb-3 text-sm text-gray-300">Select Service</legend>
+//                   <div className="flex flex-wrap gap-6 md:gap-3">
+//                     {["Saas", "Short", "Youtube", "Web App"].map((s) => (
+//                       <div key={s}>
+//                         <input
+//                           type="radio"
+//                           id={s}
+//                           name="w_service"
+//                           value={s}
+//                           className="hidden peer"
+//                         />
+//                         <label
+//                           htmlFor={s}
+//                           className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all 
+//                      bg-[#1E233C] text-gray-200 hover:bg-[#2A3050]
+//                      peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30 
+//                      peer-checked:text-white peer-checked:ring-2 peer-checked:ring-[#7EE0FF]/50"
+//                         >
+//                           {s}
+//                         </label>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </fieldset>
+
+//                 {/* Budget options */}
+//                 <fieldset>
+//                   <legend className="mb-3 text-sm text-gray-300">Estimated Budget</legend>
+//                   <div className="flex flex-wrap gap-6 md:gap-3">
+//                     {[
+//                       "Less than $500",
+//                       "$500 - $1k",
+//                       "$1k - $5k",
+//                       "More than $5k",
+//                     ].map((b) => (
+//                       <div key={b}>
+//                         <input
+//                           type="radio"
+//                           id={b}
+//                           name="w_budget"
+//                           value={b}
+//                           className="hidden peer"
+//                         />
+//                         <label
+//                           htmlFor={b}
+//                           className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all 
+//                      bg-[#1E233C] text-gray-200 hover:bg-[#2A3050]
+//                      peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30 
+//                      peer-checked:text-white peer-checked:ring-2 peer-checked:ring-[#7EE0FF]/50"
+//                         >
+//                           {b}
+//                         </label>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </fieldset>
+
+
+//                 {/* Project details */}
+//                 <textarea
+//                   name="project_desc"
+//                   rows={6}
+//                   maxLength={2000}
+//                   placeholder="Write your dream plan's brief here"
+//                   className="w-full px-8 py-4 rounded-2xl bg-[#050A26] text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#7EE0FF] transition-all"
+//                 />
+
+//                 {/* Submit */}
+//                 <button
+//                   type="submit"
+//                   className="w-full md:w-auto px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-[#1f2937]/40 to-[#050a26]/60 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#7EE0FF] transition-all"
+//                 >
+//                   Hit &amp; Make The Magic
+//                 </button>
+//               </form>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+
+
+
+
+"use client"
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+// EmailJS প্যাকেজটি সরাসরি ইমপোর্ট করা হয়েছে
+import emailjs from '@emailjs/browser';
+
 
 export default function WorkWithUs() {
+  const formRef = useRef();
+  const [statusMessage, setStatusMessage] = useState({ text: '', type: '' });
 
 
-  // form submit handler with axios
+  // =======================================================
+  // IMPORTANT: আপনার EmailJS Configuration Key গুলি এখানে আপডেট করুন
+  // =======================================================
+  const SERVICE_ID = "service_qo8ygms";
+  const TEMPLATE_ID = "template_ybh0nzr";
+  const PUBLIC_KEY = "KfuZu-nCO8hyrOUSl";
+
+
+  // ইউটিলিটি ফাংশন: সফল বা ত্রুটির মেসেজ দেখানোর জন্য
+  const showStatus = (text, type = 'success') => {
+    setStatusMessage({ text, type });
+    setTimeout(() => {
+      setStatusMessage({ text: '', type: '' });
+    }, 4000); // 4 সেকেন্ডের জন্য মেসেজটি দেখাবে
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
 
-    try {
-      const res = await axios.post("https://backend-wine-chi-49.vercel.app/contact", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (res) {
-        Swal.fire({
-          title: "Good job!",
-          text: "✅ Form submitted successfully!",
-          icon: "success"
-        });
-        e.target.reset();
-      } else {
-
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "❌ Something went wrong!",
-        });
-      }
-    } catch (error) {
-       Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Fill all input field",
-        });
+    if (!formRef.current) {
+      console.error("ফর্মের রেফারেন্স পাওয়া যায়নি।");
+      return;
     }
+
+
+    // EmailJS এর মাধ্যমে ফর্ম ডেটা পাঠানো হচ্ছে
+    emailjs
+      .sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formRef.current, // ফর্ম রেফারেন্স
+        PUBLIC_KEY        // পাবলিক কী
+      )
+      .then(
+        (result) => {
+          showStatus("✅ মেসেজ সফলভাবে পাঠানো হয়েছে!", 'success');
+          formRef.current.reset(); // সফল হলে ফর্ম রিসেট
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          showStatus("❌ মেসেজ পাঠাতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।", 'error');
+        }
+      );
   };
+
+
+  // স্ট্যাটাস মেসেজের স্টাইলিং লজিক
+  const statusClasses = statusMessage.type === 'success'
+    ? 'bg-green-500/90'
+    : 'bg-red-500/90';
+
+
+  const statusDisplay = statusMessage.text && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+      className={`fixed bottom-5 right-5 z-50 p-4 rounded-lg shadow-xl text-white font-semibold ${statusClasses}`}
+    >
+      {statusMessage.text}
+    </motion.div>
+  );
+
+
+
 
   return (
     <div className="pt-10 pb-0 ">
+      {statusDisplay}
       {/* Heading Section */}
       <div className="relative z-10 max-w-3xl pb-16 mx-auto text-center">
         <motion.div
@@ -236,6 +524,7 @@ export default function WorkWithUs() {
         </motion.p>
       </div>
 
+
       <section
         className="relative z-10 w-full bg-left-bottom bg-no-repeat bg-contain "
         style={{
@@ -246,10 +535,11 @@ export default function WorkWithUs() {
         {/* Glass overlay */}
         <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-xl"></div>
 
+
         <div className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Left column */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}   // ✅ x থেকে y করা হলো
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col gap-6 md:col-span-1"
@@ -265,14 +555,17 @@ export default function WorkWithUs() {
                 loading="lazy"
               />
 
+
               <h4 className="text-lg font-semibold leading-tight md:text-xl">
                 Meet Sumon,{" "}
                 <span className="text-[#7EE0FF]">Brain Behind</span>
               </h4>
 
+
               <p className="text-sm leading-relaxed text-gray-200 md:text-base">
                 Enhance your brand with polished, high-impact video editing. Schedule your complimentary consultation today to craft visuals that captivate and convert.
               </p>
+
 
               <div>
                 <a
@@ -291,9 +584,10 @@ export default function WorkWithUs() {
             </div>
           </motion.div>
 
+
           {/* Right column */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}   // ✅ x থেকে y করা হলো
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="md:col-span-2"
@@ -305,9 +599,14 @@ export default function WorkWithUs() {
                   "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
               }}
             >
-              <form className="space-y-6" aria-label="Contact form" onSubmit={handleSubmit}>
+              <form
+                className="space-y-6"
+                aria-label="Contact form"
+                onSubmit={handleSubmit}
+                ref={formRef}
+              >
                 {/* Name + Email */}
-                <div className="flex flex-col gap-4 md:flex-row">
+                <div className="flex flex-col gap-4 sm:flex-row flex-wrap">
                   <input
                     name="client_name"
                     type="text"
@@ -323,11 +622,12 @@ export default function WorkWithUs() {
                   />
                 </div>
 
+
                 {/* Service options */}
                 <fieldset>
                   <legend className="mb-3 text-sm text-gray-300">Select Service</legend>
-                  <div className="flex flex-wrap gap-6 md:gap-3">
-                    {["Saas", "Short", "Youtube", "Web App"].map((s) => (
+                  <div className="flex flex-wrap gap-7 md:gap-6">
+                    {["Shorts video", "YouTube video", "Podcast video", "SAAS Video"].map((s) => (
                       <div key={s}>
                         <input
                           type="radio"
@@ -338,9 +638,9 @@ export default function WorkWithUs() {
                         />
                         <label
                           htmlFor={s}
-                          className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all 
+                          className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all
                      bg-[#1E233C] text-gray-200 hover:bg-[#2A3050]
-                     peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30 
+                     peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30
                      peer-checked:text-white peer-checked:ring-2 peer-checked:ring-[#7EE0FF]/50"
                         >
                           {s}
@@ -350,10 +650,11 @@ export default function WorkWithUs() {
                   </div>
                 </fieldset>
 
+
                 {/* Budget options */}
                 <fieldset>
                   <legend className="mb-3 text-sm text-gray-300">Estimated Budget</legend>
-                  <div className="flex flex-wrap gap-6 md:gap-3">
+                  <div className="flex flex-wrap gap-7 md:gap-6">
                     {[
                       "Less than $500",
                       "$500 - $1k",
@@ -370,9 +671,9 @@ export default function WorkWithUs() {
                         />
                         <label
                           htmlFor={b}
-                          className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all 
+                          className="cursor-pointer px-6 py-3 rounded-full text-sm transition-all
                      bg-[#1E233C] text-gray-200 hover:bg-[#2A3050]
-                     peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30 
+                     peer-checked:bg-gradient-to-r peer-checked:from-[#7EE0FF]/30 peer-checked:to-[#8AE6C1]/30
                      peer-checked:text-white peer-checked:ring-2 peer-checked:ring-[#7EE0FF]/50"
                         >
                           {b}
@@ -383,6 +684,8 @@ export default function WorkWithUs() {
                 </fieldset>
 
 
+
+
                 {/* Project details */}
                 <textarea
                   name="project_desc"
@@ -391,6 +694,7 @@ export default function WorkWithUs() {
                   placeholder="Write your dream plan's brief here"
                   className="w-full px-8 py-4 rounded-2xl bg-[#050A26] text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#7EE0FF] transition-all"
                 />
+
 
                 {/* Submit */}
                 <button

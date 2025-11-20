@@ -184,7 +184,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto mb-1 text-center"
           >
-            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[2.95rem] leading-tight ">
+            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[3.95rem] !leading-[3.5rem] ">
               Transform Your Business Fast with High-Quality Engaging Video Content
             </h1>
           </motion.div>

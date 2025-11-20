@@ -24,10 +24,10 @@ const syne = Syne({
 const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
 export const metadata = {
-  title: "Lumenza Midea",
-  description: "Lumenza Midea is a smart and modern solution for digital comfort, innovation, and lifestyle.",
+  title: "Lumenza Media",
+  description: "Lumenza Media is a smart and modern solution for digital comfort, innovation, and lifestyle.",
   keywords: [
-    "Lumenza Midea",
+    "Lumenza Media",
     "smart home",
     "digital lifestyle",
     "modern appliances",
@@ -41,16 +41,16 @@ export const metadata = {
   creator: "Sumon Mondle",
   metadataBase: new URL("https://www.lumenza.pro"),
   openGraph: {
-    title: "Lumenza Midea",
-    description: "Discover smart living with Lumenza Midea - comfort meets technology.",
+    title: "Lumenza Media",
+    description: "Discover smart living with Lumenza Media - comfort meets technology.",
     url: "https://www.lumenza.pro",
-    siteName: "Lumenza Midea",
+    siteName: "Lumenza Media",
     images: [
       {
         url: "/logo.png",
         width: 800,
         height: 600,
-        alt: "Lumenza Midea Logo",
+        alt: "Lumenza Media Logo",
       },
     ],
     locale: "en_US",
@@ -58,10 +58,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumenza Midea",
-    description: "Experience modern living with Lumenza Midea.",
+    title: "Lumenza Media",
+    description: "Experience modern living with Lumenza Media.",
     images: ["/logo.png"],
-    creator: "@lumenzamidea",
+    creator: "@lumenzaMedia",
   },
   icons: {
     icon: "/logo.png",
