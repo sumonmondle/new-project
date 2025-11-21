@@ -57,7 +57,7 @@ export default function AboutUsSlider() {
 
 
   const { isPending, error, aboutUs, refetch } = useAboutUs();
-  console.log("Fetched Data:", aboutUs);
+  
 
   // 🧩 Default fallback data
   const defaultSlides = [

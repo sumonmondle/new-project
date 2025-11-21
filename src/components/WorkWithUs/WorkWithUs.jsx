@@ -417,6 +417,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 // EmailJS প্যাকেজটি সরাসরি ইমপোর্ট করা হয়েছে
 import emailjs from '@emailjs/browser';
+import axios from "axios";
 
 
 export default function WorkWithUs() {
@@ -440,6 +441,20 @@ export default function WorkWithUs() {
     }, 4000); // 4 সেকেন্ডের জন্য মেসেজটি দেখাবে
   };
 
+  // ✅ সহায়ক ফাংশন: FormData থেকে সাধারণ JS অবজেক্ট তৈরি করা
+  const getFormDataObject = (formElement) => {
+    const data = new FormData(formElement);
+    const object = {};
+    // FormData-এর প্রতিটি কী (ইনপুটের name) এবং ভ্যালু বের করা হচ্ছে
+    data.forEach((value, key) => {
+      object[key] = value;
+    });
+    // { name: '...', email: '...', message: '...' } ফরম্যাটে অবজেক্টটি রিটার্ন করা হচ্ছে
+    return object;
+  };
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -460,14 +475,45 @@ export default function WorkWithUs() {
         PUBLIC_KEY        // পাবলিক কী
       )
       .then(
-        (result) => {
-          showStatus("✅ মেসেজ সফলভাবে পাঠানো হয়েছে!", 'success');
-          formRef.current.reset(); // সফল হলে ফর্ম রিসেট
+        // (result) => {
+        //   showStatus("✅ Message sent successfully!", 'success');
+        //   formRef.current.reset(); // সফল হলে ফর্ম রিসেট
+        // },
+        // (error) => {
+        //   console.error("EmailJS Error:", error);
+        //   showStatus("❌ Failed to send the message. Please try again.", 'error');
+        // }
+        async (result) => { // <-- এখানে async যুক্ত করা হয়েছে
+          let successMessage = "✅ Message sent successfully!";
+
+          try {
+            const apiRes = await axios.post("https://backend-wine-chi-49.vercel.app/contact", getFormDataObject(formRef.current), {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+
+            if (apiRes.status >= 200 && apiRes.status < 300) {
+              // API কলও সফল
+              successMessage = "✅ Message sent successfully!";
+            } else {
+              // EmailJS সফল, কিন্তু API রেসপন্স সফল নয়
+              console.error("API Save failed with status:", apiRes.status);
+              successMessage = "⚠️ Failed to send the message. Please try again.";
+            }
+
+          } catch (apiError) {
+            // EmailJS সফল, কিন্তু API কল ফেইল করেছে (নেটওয়ার্ক বা সার্ভার এরর)
+            console.error("API Save Error:", apiError);
+            successMessage = "⚠️ Failed to send the message. Please try again.";
+          }
+
+          showStatus(successMessage, 'success');
+          formRef.current.reset();
         },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          showStatus("❌ মেসেজ পাঠাতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।", 'error');
-        }
+
+
+
       );
   };
 
@@ -606,7 +652,7 @@ export default function WorkWithUs() {
                 ref={formRef}
               >
                 {/* Name + Email */}
-                <div className="flex flex-col gap-4 sm:flex-row flex-wrap">
+                <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                   <input
                     name="client_name"
                     type="text"
