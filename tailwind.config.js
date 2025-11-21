@@ -14,6 +14,15 @@ module.exports = {
         geist: ["var(--font-geist-sans)", "sans-serif"],
         geistMono: ["var(--font-geist-mono)", "monospace"],
         syne: ["var(--font-syne)", "sans-serif"],
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'framer-h1': ['60px', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
+      },
+    
+      fontWeight: {
+        medium: 600,
+        bold: 700,
       },
        keyframes: {
         marquee: {

@@ -136,11 +136,11 @@ import useHeaderVideo from "@/hook/useHeaderVideo";
 import { useState } from "react";
 
 const clientImages = [
-  "https://framerusercontent.com/images/58IbyFPDZt1MzyLggmMD3PrJsQ.png",
-  "https://framerusercontent.com/images/3ljYEqohtI2b06DjjDXdGayh0jU.jpg",
-  "https://framerusercontent.com/images/f1DS8SjePPfrm8I7S7Aw6vU8tPs.png",
-  "https://framerusercontent.com/images/eypxGLbLsyxFpirkXlVe32e04Z8.png",
-];
+    "/image/client1.JPG",
+    "/image/client2.JPG",
+    "/image/client4.JPG",
+    "/image/client3.png",
+  ];
 
 
 
@@ -182,10 +182,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto mb-1 text-center"
+            className="max-w-[686px] mx-auto mb-1 text-center"
           >
-            <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[3.95rem] !leading-[3.5rem] ">
-              Transform Your Business Fast with High-Quality Engaging Video Content
+            <h1 className="text-3xl font-medium text-white font-jakarta md:text-framer-h1">
+            {/* <h1 className="text-3xl font-semibold text-gray-200 sm:text-4xl lg:text-[3.95rem] !leading-[3.5rem] "> */}
+              Transform Your Business Fast with High-Quality Video Content
             </h1>
           </motion.div>
 
@@ -245,7 +246,7 @@ export default function HeroSection() {
             className="max-w-2xl mx-auto text-center"
           >
             <p className="mt-2 text-sm text-gray-500">
-              Used by 10,000+ editors worldwide.
+              Trusted by 100+ Clients Worldwide
             </p>
           </motion.div>
           {/* Button */}

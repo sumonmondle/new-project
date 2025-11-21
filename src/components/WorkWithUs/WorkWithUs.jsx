@@ -615,7 +615,7 @@ export default function WorkWithUs() {
 
               <div>
                 <a
-                  href="https://tidycal.com/panze/meeting"
+                  href="https://calendly.com/sumonmondle/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block px-6 py-3 text-sm font-medium text-white rounded-full transition-all duration-400 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7EE0FF]"

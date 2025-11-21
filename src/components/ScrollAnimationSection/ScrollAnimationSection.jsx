@@ -62,28 +62,30 @@ export default function AnimatedParallaxSection() {
           <motion.h2
             style={{ opacity: opacity1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-2xl lg:text-[27px]/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-[32px]/none font-bold font-syne text-white tracking-[2px] "
           >
             {/* Tired of boring video content that */}
-            We help entrepreneurs and businesses grow
+            We help entrepreneurs and businesses build
           </motion.h2>
 
           <motion.h2
             style={{ opacity: opacity2 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl lg:text-[27px]/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-[32px]/none font-bold font-syne text-white tracking-[2px] "
           >
             {/* don’t stand out? It’s time to upgrade */}
-            authentic brands and personalities on social media
+            {/* authentic brands and personalities on social media */}
+            authentic social brands that attract attention
           </motion.h2>
 
           <motion.h2
             style={{ opacity: opacity3 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="text-2xl lg:text-[27px]/none font-bold font-syne text-white tracking-[2px] "
+            className="text-2xl lg:text-[32px]/none font-bold font-syne text-white tracking-[2px] "
           >
             {/* the game with us! */}
-            that attract attention and generate lasting impact
+            {/* that attract attention and generate lasting impact */}
+            and create lasting meaningful impact.
           </motion.h2>
         </div>
       </section>

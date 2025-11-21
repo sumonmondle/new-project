@@ -8,7 +8,7 @@
 //     <footer className="text-white bg-black">
 //       <Container>
 //         {/* Top Divider Line */}
-      
+
 
 //         {/* Main Footer */}
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-0 mb-[60px]">
@@ -187,7 +187,7 @@ function Footer() {
             {/* Social Media Links */}
             <div className="flex gap-[30px]">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sumon-mondle/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[20px] inline-block transition-opacity duration-300 hover:opacity-70"
@@ -201,20 +201,22 @@ function Footer() {
                 />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.instagram.com/lumenzacreation/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[20px] inline-block transition-opacity duration-300 hover:opacity-70"
               >
                 <Image
-                  src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/6796419e2d5f0387789624f9_X.com.svg"
-                  alt="X.com logo"
+                  src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                  alt="Instagram logo"
                   width={20}
                   height={20}
                   className="w-full h-auto"
                 />
               </a>
-              <a
+
+
+              {/* <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -227,7 +229,7 @@ function Footer() {
                   height={20}
                   className="w-full h-auto"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </Container>
