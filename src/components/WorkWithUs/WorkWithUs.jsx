@@ -458,10 +458,10 @@ export default function WorkWithUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const dataToSend = getFormDataObject(formRef.current);
 
-
-    if (!formRef.current) {
-      console.error("ফর্মের রেফারেন্স পাওয়া যায়নি।");
+    if (!dataToSend.client_name || !dataToSend.client_email || !dataToSend.w_service || !dataToSend.w_budget || !dataToSend.project_desc) {
+      showStatus("Please fill all field", ''); // <-- যদি সব ফিল্ড পূরণ না হয়, তবে এখানেই থেমে যাবে
       return;
     }
 
