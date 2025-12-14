@@ -113,32 +113,32 @@ function YouLeadsTimeline() {
 
   return (
     <>
-       <div className="relative z-10 max-w-3xl pb-20 mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-sm font-semibold tracking-widest text-gray-300 font-syne"
-            >
-              Our process
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
-            >
-              Our strategy to grow 
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="pt-2 text-3xl font-semibold text-white font-syne"
-            >
-              your brand with content
-            </motion.p>
-          </div>
+      <div className="relative z-10 max-w-3xl pb-20 mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-sm font-semibold tracking-widest text-gray-300 font-syne"
+        >
+          Our process
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-4xl font-syne md:text-4xl pt-2 font-bold bg-gradient-to-r from-[#898e99] to-gray-400 bg-clip-text text-transparent"
+        >
+          Our strategy to grow
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="pt-2 text-3xl font-semibold text-white font-syne"
+        >
+          your brand with content
+        </motion.p>
+      </div>
 
       <div className="relative w-full max-w-5xl mx-auto ">
         {/* Timeline Line */}
@@ -190,7 +190,7 @@ function YouLeadsTimeline() {
               src="https://i.postimg.cc/vTWfyH03/Gemini-Generated-Image-8d0bef8d0bef8d0b.png"
               // src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67b6c9a7b71a60f057a75d5a_tag%203.avif"
               alt="Tag 2"
-              className="md:w-[140px] w-24  absolute lg:right-32 right-56 top-24 z-10 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
+              className="md:w-[140px] w-24  absolute lg:right-40 right-56 top-24 z-10 rounded-full shadow-[0_9px_20px_-2px_#366cff91]"
               style={{ x: tag2X, y: tag2Y, rotate: 21 }}
             />
             <img
@@ -362,17 +362,26 @@ function YouLeadsTimeline() {
 
             <div ref={containerRef} className="relative w-full h-[300px] lg:h-[400px] overflow-hidden rounded-xl ">
               <motion.img
-                src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0be7a053c01e6bb522_Iman%20gadzhi.avif"
+                src="/image/nztktzl.png"
+                // src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0be7a053c01e6bb522_Iman%20gadzhi.avif"
                 alt="Iman"
                 className="absolute top-0 left-0 object-cover w-[445px] h-60 z-10"
-                style={{ x: img1X, rotate: img1Rotate }}
+                style={{
+                  x: img1X, rotate: img1Rotate,
+                  filter: 'brightness(.9) contrast(1.3) saturate(1.5) drop-shadow(0 10px 15px rgba(0,0,0,0.5))',
+                }}
               />
 
+
+
               <motion.img
-                src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0bb9bcdeb6007467cb_Ali%20abdaal%202.avif"
+                src="/image/tzkzu.png"
+                // src="https://cdn.prod.website-files.com/6796419e2d5f03877896246e/67debd0bb9bcdeb6007467cb_Ali%20abdaal%202.avif"
                 alt="Ali"
                 className="absolute top-0 left-0 w-[445px] h-60 object-cover z-20"
-                style={{ x: img2X, rotate: img2Rotate }}
+                style={{ x: img2X, rotate: img2Rotate,
+                  filter: 'brightness(.9) contrast(1.3) saturate(1.5) drop-shadow(0 10px 15px rgba(0,0,0,0.5))',
+                 }}
               />
 
               <div className="absolute top-0 left-0 z-30 w-1/3 h-full rounded-md pointer-events-none bg-gradient-to-l from-transparent to-black/80" />

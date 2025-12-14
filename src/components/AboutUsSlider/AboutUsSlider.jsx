@@ -57,7 +57,7 @@ export default function AboutUsSlider() {
 
 
   const { isPending, error, aboutUs, refetch } = useAboutUs();
-  
+
 
   // 🧩 Default fallback data
   const defaultSlides = [
@@ -106,7 +106,7 @@ export default function AboutUsSlider() {
         profaction: "Filmmaker",
         avatar: "https://i.ibb.co/jvwRpmXY/68035577b876fec0846e9f77-channel.png",
       },
-            videoThumbnail: "https://img.youtube.com/vi/-abmTPr2FFk/mqdefault.jpg",
+      videoThumbnail: "https://img.youtube.com/vi/-abmTPr2FFk/mqdefault.jpg",
       videoURL: "https://youtube.com/shorts/-abmTPr2FFk?si=C6rfp897Qa9zrPSc",
     },
     {
@@ -124,20 +124,20 @@ export default function AboutUsSlider() {
   ];
 
   // 🧠 Fallback logic (safe access)
-const slides =
-  Array.isArray(aboutUs) && aboutUs.length > 0
-    ? aboutUs
-    : defaultSlides;
+  const slides =
+    Array.isArray(aboutUs) && aboutUs.length > 0
+      ? aboutUs
+      : defaultSlides;
 
 
 
- 
+
 
 
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
-    // ✅ Add this condition before return
+  // ✅ Add this condition before return
   if (!slides.length) return null;
 
   const handlePrev = () => {
@@ -186,6 +186,26 @@ const slides =
     }
   };
 
+  const getHQThumbnail = (url) => {
+    try {
+      let id = "";
+
+      if (url.includes("youtu.be/")) {
+        id = url.split("youtu.be/")[1].split("?")[0];
+      } else if (url.includes("/shorts/")) {
+        id = url.split("/shorts/")[1].split("?")[0];
+      } else if (url.includes("watch?v=")) {
+        id = url.split("v=")[1].split("&")[0];
+      }
+
+      return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+    } catch {
+      return url;
+    }
+  };
+
+
+
 
   return (
     <div className="relative flex items-center justify-center min-h-screen px-4 bg-black">
@@ -216,17 +236,33 @@ const slides =
             >
               {!isPlaying ? (
                 <>
-                  {/* Thumbnail Image */}
-                  <img
-                    src={slides[current].videoThumbnail}
-                    alt="Video Thumbnail"
-                    className="absolute top-0 left-0 object-cover w-full h-full rounded-2xl"
+                  {/* Thumbnail Wrapper – FIXED 9:16 */}
+                  <div
+                    className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-2xl"
+                    style={{ aspectRatio: "9 / 16" }}
                     onClick={() => setIsPlaying(true)}
-                  />
-                  {/* Play Button Overlay */}
+                  >
+                    <img
+                      src={getHQThumbnail(slides[current].videoURL)}
+                      alt="Video Thumbnail"
+                      className="object-cover w-full h-full"
+                      loading="eager"
+                      decoding="async"
+                      style={{
+                        imageRendering: "auto",
+                      }}
+                    />
+                  </div>
+
+                  {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-75 rounded-full">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/80">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-10 h-10 text-black"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
@@ -237,25 +273,33 @@ const slides =
                   {/* Video iframe */}
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                    src={getEmbedUrl(slides[current].videoURL)}  // ✅ ঠিক এইভাবে
+                    src={`${getEmbedUrl(slides[current].videoURL)}?autoplay=1`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    autoPlay
                   ></iframe>
+
                   {/* Close Button */}
                   <button
                     onClick={() => setIsPlaying(false)}
-                    className="absolute z-50 p-2 text-white transition bg-black bg-opacity-50 rounded-full top-2 right-2 hover:bg-opacity-80"
+                    className="absolute z-50 p-2 text-white rounded-full bg-black/60 top-2 right-2 hover:bg-black/80"
                     aria-label="Close video"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </>
               )}
+
             </div>
 
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
@@ -275,8 +319,8 @@ const slides =
                 <Image
                   src={slides[current].user.avatar}
                   alt={slides[current].user.name}
-                  width={50}
-                  height={50}
+                  width={1000}
+                  height={1000}
                   className="object-cover border border-gray-400 rounded-full h-14 w-14"
                 />
                 <div className="flex flex-col text-left">
